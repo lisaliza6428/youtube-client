@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './video-thumbnail.component.html',
   styleUrls: ['./video-thumbnail.component.scss'],
 })
-export class VideoThumbnailComponent implements OnInit {
+export class VideoThumbnailComponent  {
 
   constructor() { }
 

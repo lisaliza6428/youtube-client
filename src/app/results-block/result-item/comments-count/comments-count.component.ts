@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './comments-count.component.html',
   styleUrls: ['./comments-count.component.scss'],
 })
-export class CommentsCountComponent implements OnInit {
+export class CommentsCountComponent  {
 
   constructor() { }
 

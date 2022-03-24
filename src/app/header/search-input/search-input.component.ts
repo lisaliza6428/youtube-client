@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.scss'],
 })
-export class SearchInputComponent implements OnInit {
+export class SearchInputComponent  {
 
   constructor() { }
 

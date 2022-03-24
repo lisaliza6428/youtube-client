@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './dislikes-count.component.html',
   styleUrls: ['./dislikes-count.component.scss'],
 })
-export class DislikesCountComponent implements OnInit {
+export class DislikesCountComponent  {
 
   constructor() { }
 

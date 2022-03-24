@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './filtering-buttons.component.html',
   styleUrls: ['./filtering-buttons.component.scss'],
 })
-export class FilteringButtonsComponent implements OnInit {
+export class FilteringButtonsComponent  {
 
   constructor() { }
 

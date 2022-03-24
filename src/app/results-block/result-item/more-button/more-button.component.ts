@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './more-button.component.html',
   styleUrls: ['./more-button.component.scss'],
 })
-export class MoreButtonComponent implements OnInit {
+export class MoreButtonComponent  {
 
   constructor() { }
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './results-block.component.html',
   styleUrls: ['./results-block.component.scss'],
 })
-export class ResultsBlockComponent implements OnInit {
+export class ResultsBlockComponent  {
 
   constructor() { }
 

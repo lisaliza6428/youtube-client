@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './filtering-input.component.html',
   styleUrls: ['./filtering-input.component.scss'],
 })
-export class FilteringInputComponent implements OnInit {
+export class FilteringInputComponent  {
 
   constructor() { }
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './views-count.component.html',
   styleUrls: ['./views-count.component.scss'],
 })
-export class ViewsCountComponent implements OnInit {
+export class ViewsCountComponent  {
 
   constructor() { }
 
