@@ -8,9 +8,9 @@ describe('LikesCountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LikesCountComponent ]
+      declarations: [ LikesCountComponent ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

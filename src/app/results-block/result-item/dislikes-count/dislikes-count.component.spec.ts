@@ -8,9 +8,9 @@ describe('DislikesCountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DislikesCountComponent ]
+      declarations: [ DislikesCountComponent ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

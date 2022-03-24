@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dislikes-count',
   templateUrl: './dislikes-count.component.html',
-  styleUrls: ['./dislikes-count.component.scss']
+  styleUrls: ['./dislikes-count.component.scss'],
 })
 export class DislikesCountComponent implements OnInit {
 

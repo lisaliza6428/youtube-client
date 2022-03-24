@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-video-thumbnail',
   templateUrl: './video-thumbnail.component.html',
-  styleUrls: ['./video-thumbnail.component.scss']
+  styleUrls: ['./video-thumbnail.component.scss'],
 })
 export class VideoThumbnailComponent implements OnInit {
 

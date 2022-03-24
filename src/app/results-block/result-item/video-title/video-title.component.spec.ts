@@ -8,9 +8,9 @@ describe('VideoTitleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VideoTitleComponent ]
+      declarations: [ VideoTitleComponent ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

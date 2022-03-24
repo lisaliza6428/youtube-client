@@ -8,9 +8,9 @@ describe('ViewsCountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewsCountComponent ]
+      declarations: [ ViewsCountComponent ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

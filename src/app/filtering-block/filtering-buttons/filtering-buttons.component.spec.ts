@@ -8,9 +8,9 @@ describe('FilteringButtonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FilteringButtonsComponent ]
+      declarations: [ FilteringButtonsComponent ],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

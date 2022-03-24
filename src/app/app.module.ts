@@ -39,12 +39,12 @@ import { MoreButtonComponent } from './results-block/result-item/more-button/mor
     DislikesCountComponent,
     CommentsCountComponent,
     VideoTitleComponent,
-    MoreButtonComponent
+    MoreButtonComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
