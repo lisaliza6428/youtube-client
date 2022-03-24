@@ -1,10 +1,7 @@
 export interface IResponse {
   kind: string,
   etag: string,
-  pageInfo: {
-    totalResults: number,
-    resultsPerPage: number,
-  },
+  pageInfo: IPageInfo,
   items: {
     kind: string,
     etag: string,
@@ -28,6 +25,11 @@ export interface IResponse {
     },
     statistics: IStatistics,
   }[]
+}
+
+export interface IPageInfo {
+  totalResults: number,
+  resultsPerPage: number,
 }
 
 export interface IStatistics {
