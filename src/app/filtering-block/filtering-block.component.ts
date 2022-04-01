@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-filtering-block',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./filtering-block.component.scss'],
 })
 export class FilteringBlockComponent  {
+  @Input() isVisible?: boolean;
 
   constructor() { 
     

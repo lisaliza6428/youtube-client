@@ -1,1 +1,18 @@
-<p>result-item works!</p>
+
+  <ul class="results-block">
+    <li *ngFor="let video of videos">
+      <div [appCardBorderStyle]="video.snippet.publishedAt" class="card">
+        <img class="caption" [src]="video.snippet.thumbnails.medium.url" alt="">
+        <div class="indicators-wrapper">
+          <span class="indicators-item viewed">{{ video.statistics.viewCount }}</span>
+          <span class="indicators-item like">{{ video.statistics.likeCount }}</span>
+          <span class="indicators-item dislike">{{ video.statistics.dislikeCount }}</span>
+          <span class="indicators-item group">{{ video.statistics.commentCount }}</span>
+        </div>
+        <h2 class="video-title">{{ video.snippet.title }}</h2>
+        <button type="button" class="more-button">more...</button>
+      </div>
+    </li>
+  </ul>
+
+

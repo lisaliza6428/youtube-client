@@ -1,0 +1,41 @@
+/////////////
+.filtering-block {
+  padding: 18px;
+  background-color: #e5e5e5;
+}
+.filtering-block-container {
+  * {
+    margin-right: 15px;
+  }
+}
+.filtering-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #929292;
+}
+.filtering-criteria {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: #2f80ed;
+}
+.filtering-input {
+  background-color: #fffdfd;
+  border: 1px solid #efefef;
+  margin: 0 0 0 10px;
+  width: 149px;
+  height: 15px;
+  border: none;
+  padding: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+

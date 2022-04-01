@@ -1,0 +1,79 @@
+header {
+  background-color: #e5e5e5;
+}
+.logo {
+  margin-left: 10px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 80px;
+}
+.settings-button {
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  background-size: 24px 24px;
+  font-size: 0px;
+}
+
+.search-block {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  background-color: #fffdfd;
+  border: 1px solid #efefef;
+  margin: 0 0 0 10px;
+  width: 400px;
+  border: none;
+  padding: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-button {
+  font-family: "Roboto";
+  padding: 5px 22px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background: #2f80ed;
+  border-radius: 0px 4px 4px 0px;
+  border: 1px solid #2f80ed;
+  cursor: pointer;
+}
+.login-block {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.user-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  color: #4f4f4f;
+}
+.user-image {
+  margin-left: 10px;
+}
+img {
+  font-size: 0;
+}
+
+
+

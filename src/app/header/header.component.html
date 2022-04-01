@@ -1,1 +1,21 @@
-<p>header works!</p>
+
+  <header>
+    <div class="container">
+      <div class="header">
+        <div class="search-block">
+          <img src="../assets/logo.svg" alt="logo">
+          <input [(ngModel)]="searchInput" class= "search-input" type="text" placeholder="What are you want to find out?">
+          <button (click)="showResultsBlock()" class= "search-button" type="button">search</button>
+          <button (click)="showFiltering()" class= "settings-button" type="button"><img src="../assets/search-settings.svg" width="24" height="24" alt=""></button>
+        </div>
+        <div class="login-block">
+          <span class="user-name">Your Name</span>
+          <img class= "user-image"src="../assets/login.svg" width="24" height="24" alt="">
+        </div>
+      </div>
+  </div>
+  </header>
+  <app-filtering-block [isVisible]="isVisible"></app-filtering-block>
+  <app-results-block [isVisibleResults]="isVisibleResults"></app-results-block>
+
+
