@@ -1,24 +1,13 @@
 header {
   background-color: #e5e5e5;
 }
-.logo {
-  margin-left: 10px;
-}
 .header {
   display: flex;
   align-items: center;
   flex-direction: row;
   height: 80px;
 }
-.settings-button {
-  margin-left: 10px;
-  width: 24px;
-  height: 24px;
-  background: none;
-  border: none;
-  background-size: 24px 24px;
-  font-size: 0px;
-}
+
 
 .search-block {
   width: 70%;
@@ -54,26 +43,3 @@ header {
   border: 1px solid #2f80ed;
   cursor: pointer;
 }
-.login-block {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-.user-name {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: right;
-  color: #4f4f4f;
-}
-.user-image {
-  margin-left: 10px;
-}
-img {
-  font-size: 0;
-}
-
-
-

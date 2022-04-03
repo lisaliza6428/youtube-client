@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent  {
+
+
+  @Output() filtersIsVisible = new EventEmitter<boolean>();
+
+  toggleFilters(isVisible: boolean) {
+    this.filtersIsVisible.emit(isVisible);
+  }
+
   isVisible = false;
 
   isVisibleResults = false;
@@ -17,18 +25,23 @@ export class HeaderComponent  {
 
   ngOnInit(): void {
   }
-
-  showFiltering(): void {
-    this.isVisible = !this.isVisible;
-  }
-
-  showResultsBlock(){
-    
+  /*   showResultsBlock(){
     if (this.searchInput.length != 0) {
       this.isVisibleResults = true;
     } else {
       this.isVisibleResults = false;
     }
-  }
+  } */ 
+  
+  @Output() resIsVisible = new EventEmitter<boolean>();
 
+  showResultsBlock(): void {
+    if (this.searchInput.length != 0) {
+      this.isVisibleResults = true;
+    } else {
+      this.isVisibleResults = false;
+    }
+    console.log(this.isVisibleResults);
+    this.resIsVisible.emit(this.isVisibleResults);
+  }
 }

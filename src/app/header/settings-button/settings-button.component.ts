@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-settings-button',
@@ -10,6 +10,15 @@ export class SettingsButtonComponent  {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  filterIsVisible = false;
+
+  @Output() filtersIsVisible = new EventEmitter<boolean>();
+
+  toggleFilters(): void {
+    this.filterIsVisible = !this.filterIsVisible;
+    this.filtersIsVisible.emit(this.filterIsVisible);
   }
 
 }

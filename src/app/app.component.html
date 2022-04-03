@@ -1,7 +1,3 @@
-<app-header></app-header>
-
-
-
-
-
-
+<app-header (filtersIsVisible)="toggleFilters($event)" (resIsVisible)="toggleRes($event)"></app-header>
+<app-filtering-block *ngIf="filtersIsVisible"></app-filtering-block>
+<app-results-block *ngIf="resIsVisible"></app-results-block>

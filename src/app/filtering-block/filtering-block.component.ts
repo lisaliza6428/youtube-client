@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./filtering-block.component.scss'],
 })
 export class FilteringBlockComponent  {
-  @Input() isVisible?: boolean;
+  //@Input() isVisible?: boolean;
 
   constructor() { 
     
@@ -14,6 +14,11 @@ export class FilteringBlockComponent  {
 
   ngOnInit(): void {
 
-  } 
+  }
+  sort() {
+    console.log('sorted');
+    this.ngOnInit();
+  }
+  
 
 }

@@ -1,18 +1,20 @@
-
-  <ul class="results-block">
+<p (click)="sortDate()">Date</p>
+<p (click)="sortViewsCount()">Views</p>
+  <ul class="videos">
     <li *ngFor="let video of videos">
-      <div [appCardBorderStyle]="video.snippet.publishedAt" class="card">
-        <img class="caption" [src]="video.snippet.thumbnails.medium.url" alt="">
-        <div class="indicators-wrapper">
-          <span class="indicators-item viewed">{{ video.statistics.viewCount }}</span>
-          <span class="indicators-item like">{{ video.statistics.likeCount }}</span>
-          <span class="indicators-item dislike">{{ video.statistics.dislikeCount }}</span>
-          <span class="indicators-item group">{{ video.statistics.commentCount }}</span>
+      <div [appCardBorderStyle]="video.snippet.publishedAt" class="video__card">
+        <img class="video__image" [src]="video.snippet.thumbnails.medium.url" alt="video">
+        <div class="video__stat">
+          <span class="stat__item stat__item--viewed">{{ video.statistics.viewCount }}</span>
+          <span class="stat__item stat__item--like">{{ video.statistics.likeCount }}</span>
+          <span class="stat__item stat__item--dislike">{{ video.statistics.dislikeCount }}</span>
+          <span class="stat__item stat__item--group">{{ video.statistics.commentCount }}</span>
         </div>
-        <h2 class="video-title">{{ video.snippet.title }}</h2>
-        <button type="button" class="more-button">more...</button>
+        <h2 class="video__title">{{ video.snippet.title }}</h2>
+        <button class="video__more-button" type="button">more...</button>
       </div>
     </li>
   </ul>
+
 
 

@@ -1,11 +1,12 @@
 
-  <div *ngIf="isVisible" class="filtering-block">
+<!--   <div *ngIf="isVisible" class="filtering-block"> -->
+    <div class="filtering-block">
     <div class="container">
       <div class="filtering-block-container">
         <span class="filtering-title">Sorting by:</span>
-        <span class="filtering-criteria">date</span>
-        <span class="filtering-criteria">count of views</span>
-        <span class="filtering-criteria">by word or sentance</span>
+        <button class="filtering-criteria">date</button>
+        <button (click)="sort()" class="filtering-criteria">count of views</button>
+        <button class="filtering-criteria">by word or sentance</button>
         <input class="filtering-input" type="text">
       </div>
     </div>

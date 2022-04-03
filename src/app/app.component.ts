@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'youtube-client';
+
+  filtersIsVisible = false;
+
+  toggleFilters(isVisible: boolean) {
+    this.filtersIsVisible = isVisible;
+  }
+
+  resIsVisible = false;
+
+  toggleRes(isVisible: boolean) {
+    this.resIsVisible = isVisible;
+  }
 }

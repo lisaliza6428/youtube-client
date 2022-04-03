@@ -24,7 +24,6 @@ export class CardBorderStyleDirective {
     if (days > 32) {
       color = 'red';
     }
-    console.log(days);
     this.render.setStyle(this.elementRef.nativeElement, 'border-bottom', `solid 10px ${color}`);
   }
 }
