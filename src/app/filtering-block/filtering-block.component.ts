@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-filtering-block',
@@ -6,19 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./filtering-block.component.scss'],
 })
 export class FilteringBlockComponent  {
-  //@Input() isVisible?: boolean;
 
   constructor() { 
-    
   }
 
   ngOnInit(): void {
-
   }
-  sort() {
-    console.log('sorted');
-    this.ngOnInit();
-  }
-  
 
 }
