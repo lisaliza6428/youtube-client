@@ -10,10 +10,6 @@ export class FilteringBlockComponent  {
   constructor() { 
   }
 
-  ngOnInit(): void {
-  }
-
-
   @Input() sortedDates: string;
 
   @Output() datesOrder = new EventEmitter<string>();

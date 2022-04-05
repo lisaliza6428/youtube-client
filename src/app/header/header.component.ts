@@ -23,8 +23,6 @@ export class HeaderComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
   @Output() resultsIsVisible = new EventEmitter<boolean>();
 

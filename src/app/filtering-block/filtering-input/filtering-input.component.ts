@@ -9,7 +9,4 @@ export class FilteringInputComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
 }

@@ -20,8 +20,6 @@ export class ResultItemComponent {
   constructor() {
   }
 
-  ngOnInit(): void {
-  }
 }
 
 

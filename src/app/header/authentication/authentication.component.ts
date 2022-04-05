@@ -9,7 +9,5 @@ export class AuthenticationComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

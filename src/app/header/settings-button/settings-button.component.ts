@@ -9,9 +9,6 @@ export class SettingsButtonComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
   filterIsVisible = false;
 
   @Output() filtersIsVisible = new EventEmitter<boolean>();

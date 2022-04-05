@@ -14,7 +14,5 @@ export class ResultsBlockComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

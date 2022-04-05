@@ -9,6 +9,4 @@ export class SearchInputComponent  {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 }
