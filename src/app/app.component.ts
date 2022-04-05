@@ -14,9 +14,30 @@ export class AppComponent {
     this.filtersIsVisible = isVisible;
   }
 
-  resIsVisible = false;
+  resultsIsVisible = false;
 
   toggleRes(isVisible: boolean) {
-    this.resIsVisible = isVisible;
+    this.resultsIsVisible = isVisible;
   }
+
+  sortedViews = false;
+
+  changeViewsOrder(value: boolean) {
+    this.sortedViews = value;
+    console.log(this.sortedViews);
+  }
+
+  sortedDates = false;
+
+  changeDatesOrder(value: boolean) {
+    this.sortedDates = value;
+    console.log(this.sortedDates);
+  }
+
+  searchInput = '';
+
+  showsearchInput(searchInput: string) {
+    this.searchInput = searchInput;
+  }
+
 }

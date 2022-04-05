@@ -1,14 +1,14 @@
-/////////////
 .filtering-block {
   padding: 18px;
   background-color: #e5e5e5;
 }
-.filtering-block-container {
+
+.filtering__list {
   * {
     margin-right: 15px;
   }
 }
-.filtering-title {
+.list__title {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -16,7 +16,7 @@
   line-height: 14px;
   color: #929292;
 }
-.filtering-criteria {
+.list__item {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -26,11 +26,11 @@
   cursor: pointer;
   color: #2f80ed;
   border: none;
+  background: transparent;
 }
-.filtering-input {
+.list__input {
   background-color: #fffdfd;
   border: 1px solid #efefef;
-  margin: 0 0 0 10px;
   width: 149px;
   height: 15px;
   border: none;

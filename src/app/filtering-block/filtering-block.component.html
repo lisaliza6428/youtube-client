@@ -1,11 +1,11 @@
 <div class="filtering-block">
   <div class="container">
-    <div class="filtering-block-container">
-      <span class="filtering-title">Sorting by:</span>
-      <button class="filtering-criteria">date</button>
-      <button class="filtering-criteria">count of views</button>
-      <button class="filtering-criteria">by word or sentance</button>
-      <input class="filtering-input" type="text">
+    <div class="filtering__list">
+      <span class="list__title">Sorting by:</span>
+      <button class="list__item" (click)="changeDateOrder(sortedDates)">date</button>
+      <button class="list__item" (click)="changeViewsOrder(sortedViews)">count of views</button>
+      <button class="list__item">by word or sentance:</button>
+      <input class="list__input" (keyup)="filter($event)" type="text">
     </div>
   </div>
 </div>

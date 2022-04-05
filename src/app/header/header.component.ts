@@ -25,15 +25,8 @@ export class HeaderComponent  {
 
   ngOnInit(): void {
   }
-  /*   showResultsBlock(){
-    if (this.searchInput.length != 0) {
-      this.isVisibleResults = true;
-    } else {
-      this.isVisibleResults = false;
-    }
-  } */ 
-  
-  @Output() resIsVisible = new EventEmitter<boolean>();
+
+  @Output() resultsIsVisible = new EventEmitter<boolean>();
 
   showResultsBlock(): void {
     if (this.searchInput.length != 0) {
@@ -41,7 +34,6 @@ export class HeaderComponent  {
     } else {
       this.isVisibleResults = false;
     }
-    console.log(this.isVisibleResults);
-    this.resIsVisible.emit(this.isVisibleResults);
+    this.resultsIsVisible.emit(this.isVisibleResults);
   }
 }

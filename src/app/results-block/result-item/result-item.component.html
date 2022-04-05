@@ -1,5 +1,3 @@
-<p (click)="sortDate()">Date</p>
-<p (click)="sortViewsCount()">Views</p>
   <ul class="videos">
     <li *ngFor="let video of videos">
       <div [appCardBorderStyle]="video.snippet.publishedAt" class="video__card">
@@ -15,6 +13,8 @@
       </div>
     </li>
   </ul>
+ 
+
 
 
 

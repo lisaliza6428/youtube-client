@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-results-block',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./results-block.component.scss'],
 })
 export class ResultsBlockComponent  {
+  @Input() sortedViews: boolean;
+
+  @Input() sortedDates: boolean;
+
+  @Input() searchInput: string;
 
   constructor() { }
 
