@@ -12,7 +12,4 @@ export class ResultsBlockComponent  {
 
   @Input() searchInput: string;
 
-  constructor() { }
-
-
 }

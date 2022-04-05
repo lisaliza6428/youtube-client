@@ -17,8 +17,6 @@ export class ResultItemComponent {
 
   videos: IVideoData[] = [...videoData];
 
-  constructor() {
-  }
 
 }
 

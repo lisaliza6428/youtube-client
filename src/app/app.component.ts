@@ -32,7 +32,6 @@ export class AppComponent {
     this.sortedViews = value;
   }
 
-
   searchInput = '';
 
   showsearchInput(searchInput: string) {

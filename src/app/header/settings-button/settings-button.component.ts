@@ -7,8 +7,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class SettingsButtonComponent  {
 
-  constructor() { }
-
   filterIsVisible = false;
 
   @Output() filtersIsVisible = new EventEmitter<boolean>();

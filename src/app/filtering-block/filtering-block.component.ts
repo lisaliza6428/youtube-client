@@ -7,9 +7,6 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class FilteringBlockComponent  {
 
-  constructor() { 
-  }
-
   @Input() sortedDates: string;
 
   @Output() datesOrder = new EventEmitter<string>();

@@ -7,6 +7,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent  {
 
+  isVisible = false;
 
   @Output() filtersIsVisible = new EventEmitter<boolean>();
 
@@ -14,15 +15,11 @@ export class HeaderComponent  {
     this.filtersIsVisible.emit(isVisible);
   }
 
-  isVisible = false;
+
 
   isVisibleResults = false;
 
   searchInput = '';
-
-
-  constructor() { }
-
 
   @Output() resultsIsVisible = new EventEmitter<boolean>();
 
