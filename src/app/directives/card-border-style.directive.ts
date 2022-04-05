@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, Renderer2   } from '@angular/core';
+/* eslint-disable import/named */
+import { Directive, ElementRef, Input, Renderer2, OnInit   } from '@angular/core';
 
 @Directive({
   selector: '[appCardBorderStyle]',

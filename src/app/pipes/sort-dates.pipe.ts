@@ -1,4 +1,5 @@
-import { Pipe } from '@angular/core';
+/* eslint-disable import/named */
+import { Pipe, PipeTransform } from '@angular/core';
 import { IVideoData  } from '../../app/models/response';
 
 @Pipe({
