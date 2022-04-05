@@ -6,11 +6,13 @@ import { IVideoData  } from '../../app/models/response';
 })
 export class SortViewsPipe implements PipeTransform {
 
-  transform(data: IVideoData[], value: boolean): IVideoData[] {
-    if (value){
+  transform(data: IVideoData[], value: string): IVideoData[] {
+    if (value === 'asc'){
       return  [...data].sort((a: IVideoData, b: IVideoData) => +a.statistics.viewCount - +b.statistics.viewCount);
-    } else {
+    } else if (value === 'desc') {
       return [...data].sort((a: IVideoData, b: IVideoData) => +b.statistics.viewCount - +a.statistics.viewCount);
+    } else {
+      return data;
     }
   }
 

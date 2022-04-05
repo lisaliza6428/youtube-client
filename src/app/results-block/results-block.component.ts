@@ -6,9 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./results-block.component.scss'],
 })
 export class ResultsBlockComponent  {
-  @Input() sortedViews: boolean;
+  @Input() sortedViews: string;
 
-  @Input() sortedDates: boolean;
+  @Input() sortedDates: string;
 
   @Input() searchInput: string;
 

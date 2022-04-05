@@ -9,9 +9,9 @@ const videoData = json.items;
   styleUrls: ['./result-item.component.scss'],
 })
 export class ResultItemComponent {
-  @Input() sortedViews: boolean;
+  @Input() sortedViews: string;
 
-  @Input() sortedDates: boolean;
+  @Input() sortedDates: string;
 
   @Input() searchInput: string;
 
@@ -20,25 +20,8 @@ export class ResultItemComponent {
   constructor() {
   }
 
-  ngOnChanges(changes: any){
-    console.log(changes);
-  /*     for (let prop in changes) {
-      if (prop === 'sortedViews'){
-        this.sortViewsCount();
-      }
-    }  */
-  }
-
   ngOnInit(): void {
   }
-
-/*   sortViewsCount() {
-    if (this.sortedViews) {
-      this.videos = this.videos.sort((a: IVideoData, b: IVideoData) => +a.statistics.viewCount - +b.statistics.viewCount);
-    } else {
-      this.videos = this.videos.sort((a: IVideoData, b: IVideoData) => +b.statistics.viewCount - +a.statistics.viewCount);
-    }
-  } */
 }
 
 

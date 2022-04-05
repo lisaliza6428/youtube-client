@@ -20,18 +20,16 @@ export class AppComponent {
     this.resultsIsVisible = isVisible;
   }
 
-  sortedDates = false;
+  sortedDates = '';
 
-  changeDatesOrder(value: boolean) {
+  changeDatesOrder(value: string) {
     this.sortedDates = value;
-    console.log(this.sortedDates);
   }
 
-  sortedViews = false;
+  sortedViews = '';
 
-  changeViewsOrder(value: boolean) {
+  changeViewsOrder(value: string) {
     this.sortedViews = value;
-    console.log(this.sortedViews);
   }
 
 

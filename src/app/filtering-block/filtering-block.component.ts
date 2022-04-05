@@ -13,23 +13,45 @@ export class FilteringBlockComponent  {
   ngOnInit(): void {
   }
 
-  @Input() sortedViews: boolean;
 
-  @Output() viewsOrder = new EventEmitter<boolean>();
+  @Input() sortedDates: string;
 
-  changeViewsOrder(value: boolean) {
-    value = !value;
-    this.viewsOrder.emit(value);
+  @Output() datesOrder = new EventEmitter<string>();
+
+  changeDateOrder(value: string) {
+    switch (value) {
+      case '':
+        value = 'asc';
+        break;
+      case 'asc':
+        value = 'desc';
+        break;
+      case 'desc':
+        value = 'asc';
+        break;
+    }
+    this.datesOrder.emit(value);
+    this.viewsOrder.emit('');
   }
 
+  @Input() sortedViews: string;
 
-  @Input() sortedDates: boolean;
+  @Output() viewsOrder = new EventEmitter<string>();
 
-  @Output() datesOrder = new EventEmitter<boolean>();
-
-  changeDateOrder(value: boolean) {
-    value = !value;
-    this.datesOrder.emit(value);
+  changeViewsOrder(value: string) {
+    switch (value) {
+      case '':
+        value = 'asc';
+        break;
+      case 'asc':
+        value = 'desc';
+        break;
+      case 'desc':
+        value = 'asc';
+        break;
+    }
+    this.viewsOrder.emit(value);
+    this.datesOrder.emit('');
   }
 
 
