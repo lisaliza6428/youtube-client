@@ -15,50 +15,30 @@ export class ResultItemComponent {
 
   @Input() searchInput: string;
 
-  videos: IVideoData[] = videoData;
-
+  videos: IVideoData[] = [...videoData];
 
   constructor() {
   }
 
   ngOnChanges(changes: any){
     console.log(changes);
-    for (let prop in changes) {
-      //console.log(prop);
-      if (prop === 'sortedViews' ){
+  /*     for (let prop in changes) {
+      if (prop === 'sortedViews'){
         this.sortViewsCount();
       }
-      if (prop === 'sortedDates' ){
-        this.sortDate();
-      }
-      if (prop === 'searchInput' ){
-        this.searchFilter();
-      }
-    } 
+    }  */
   }
 
   ngOnInit(): void {
   }
 
-  sortViewsCount() {
+/*   sortViewsCount() {
     if (this.sortedViews) {
       this.videos = this.videos.sort((a: IVideoData, b: IVideoData) => +a.statistics.viewCount - +b.statistics.viewCount);
     } else {
       this.videos = this.videos.sort((a: IVideoData, b: IVideoData) => +b.statistics.viewCount - +a.statistics.viewCount);
     }
-  }
-
-  sortDate() {
-    if (this.sortedDates){
-      this.videos = this.videos.sort((a: IVideoData, b: IVideoData) => +new Date(a.snippet.publishedAt).getTime() - +new Date(b.snippet.publishedAt).getTime()).sort();
-    } else {
-      this.videos = this.videos.sort((a: IVideoData, b: IVideoData) => +new Date(b.snippet.publishedAt).getTime() - +new Date(a.snippet.publishedAt).getTime()).sort();
-    }
-  }
-
-  searchFilter(){
-    this.videos = [...videoData].filter(x => x.snippet.title.toLowerCase().includes(this.searchInput));
-  }
+  } */
 }
 
 

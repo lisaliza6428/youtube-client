@@ -14,6 +14,9 @@ import { FilteringInputComponent } from './filtering-block/filtering-input/filte
 import { ResultsBlockComponent } from './results-block/results-block.component';
 import { ResultItemComponent } from './results-block/result-item/result-item.component';
 import { CardBorderStyleDirective } from './directives/card-border-style.directive';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SortDatesPipe } from './pipes/sort-dates.pipe';
+import { SortViewsPipe } from './pipes/sort-views.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { CardBorderStyleDirective } from './directives/card-border-style.directi
     ResultsBlockComponent,
     ResultItemComponent,
     CardBorderStyleDirective,
+    FilterPipe,
+    SortDatesPipe,
+    SortViewsPipe,
   ],
   imports: [
     BrowserModule,
