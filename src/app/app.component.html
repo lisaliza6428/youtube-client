@@ -1,0 +1,21 @@
+<app-header
+  (filtersIsVisible)="toggleFilters($event)"
+  (resultsIsVisible)="toggleRes($event)"
+></app-header>
+
+<app-filtering-block
+  *ngIf="filtersIsVisible"
+  [sortedViews]="sortedViews"
+  (viewsOrder)="changeViewsOrder($event)"
+  [sortedDates]="sortedDates"
+  (datesOrder)="changeDatesOrder($event)"
+  (searchInput)="showsearchInput($event)"
+></app-filtering-block>
+
+<app-results-block
+  [searchInput]="searchInput"
+  [sortedViews]="sortedViews"
+  [sortedDates]="sortedDates"
+  *ngIf="resultsIsVisible"
+></app-results-block>
+
