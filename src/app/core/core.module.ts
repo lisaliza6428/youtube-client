@@ -8,9 +8,6 @@ import { SearchInputComponent } from './components/header/search-input/search-in
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { AuthenticationComponent } from './components/header/authentication/authentication.component';
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
-import { FilteringButtonsComponent } from './components/filtering-block/filtering-buttons/filtering-buttons.component';
-import { FilteringInputComponent } from './components/filtering-block/filtering-input/filtering-input.component';
-
 
 @NgModule({
   declarations: [
@@ -20,8 +17,6 @@ import { FilteringInputComponent } from './components/filtering-block/filtering-
     SettingsButtonComponent,
     AuthenticationComponent,
     FilteringBlockComponent,
-    FilteringButtonsComponent,
-    FilteringInputComponent,
   ],
   imports: [
     CommonModule,
@@ -34,8 +29,6 @@ import { FilteringInputComponent } from './components/filtering-block/filtering-
     SettingsButtonComponent,
     AuthenticationComponent,
     FilteringBlockComponent,
-    FilteringButtonsComponent,
-    FilteringInputComponent,
   ],
 })
 export class CoreModule { }
