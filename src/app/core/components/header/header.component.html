@@ -2,13 +2,13 @@
   <header>
     <div class="container">
       <div class="header">
-        <app-logo></app-logo>
+        <app-logo routerLink="/main"></app-logo>
         <div class="search-block">
           <input [(ngModel)]="input" class="search-input" type="text" placeholder="What are you want to find out?">
           <button (click)="showResultsBlock()" class= "search-button" type="button">search</button>
           <app-settings-button (filtersIsVisible)="toggleFilters($event)"></app-settings-button>
         </div>
-        <app-authentication></app-authentication>
+        <app-authentication  routerLink="/auth"></app-authentication>
       </div>
   </div>
   </header>
@@ -29,4 +29,4 @@
   [sortedViews]="sortedViews"
   [sortedDates]="sortedDates"
 ></app-results-block> 
-
+<router-outlet></router-outlet>

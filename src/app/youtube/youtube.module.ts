@@ -6,6 +6,7 @@ import { CardBorderStyleDirective } from './directives/card-border-style.directi
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortDatesPipe } from './pipes/sort-dates.pipe';
 import { SortViewsPipe } from './pipes/sort-views.pipe';
+import { DetailesPageComponent } from './pages/detailes-page/detailes-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SortViewsPipe } from './pipes/sort-views.pipe';
     FilterPipe,
     SortDatesPipe,
     SortViewsPipe,
+    DetailesPageComponent,
   ],
   imports: [
     CommonModule,

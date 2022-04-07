@@ -9,6 +9,8 @@ import { SettingsButtonComponent } from './components/header/settings-button/set
 import { AuthenticationComponent } from './components/header/authentication/authentication.component';
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
 import { YoutubeModule } from '../youtube/youtube.module';
+import { RouterModule, Routes } from '@angular/router';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { YoutubeModule } from '../youtube/youtube.module';
     SettingsButtonComponent,
     AuthenticationComponent,
     FilteringBlockComponent,
+    ErrorPageComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     YoutubeModule,
+    RouterModule,
   ],
   exports: [
     HeaderComponent,
