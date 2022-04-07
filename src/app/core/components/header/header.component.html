@@ -4,7 +4,7 @@
       <div class="header">
         <app-logo></app-logo>
         <div class="search-block">
-          <input [(ngModel)]="searchInput" class="search-input" type="text" placeholder="What are you want to find out?">
+          <input [(ngModel)]="input" class="search-input" type="text" placeholder="What are you want to find out?">
           <button (click)="showResultsBlock()" class= "search-button" type="button">search</button>
           <app-settings-button (filtersIsVisible)="toggleFilters($event)"></app-settings-button>
         </div>
@@ -12,5 +12,21 @@
       </div>
   </div>
   </header>
-<!--   [(ngModel)]="searchInput" -->
+
+
+<app-filtering-block
+  *ngIf="filtersIsVisible"
+  [sortedViews]="sortedViews"
+  (viewsOrder)="changeViewsOrder($event)"
+  [sortedDates]="sortedDates"
+  (datesOrder)="changeDatesOrder($event)"
+  (searchInput)="showsearchInput($event)"
+></app-filtering-block>
+
+<app-results-block
+  *ngIf="isVisibleResults"
+  [searchInput]="searchInput"
+  [sortedViews]="sortedViews"
+  [sortedDates]="sortedDates"
+></app-results-block> 
 

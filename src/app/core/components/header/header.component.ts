@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,30 +7,44 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent  {
 
-  
 
-  isVisible = false;
-
-  @Output() filtersIsVisible = new EventEmitter<boolean>();
-
-  toggleFilters(isVisible: boolean) {
-    this.filtersIsVisible.emit(isVisible);
-  }
-
-
+  input = '';
 
   isVisibleResults = false;
 
-  searchInput = '';
-
-  @Output() resultsIsVisible = new EventEmitter<boolean>();
-
   showResultsBlock(): void {
-    if (this.searchInput.length != 0) {
+    console.log('HI!');
+    console.log(this.input.length);
+    if (this.input.length != 0) {
       this.isVisibleResults = true;
     } else {
       this.isVisibleResults = false;
     }
-    this.resultsIsVisible.emit(this.isVisibleResults);
   }
+
+
+  filtersIsVisible = false;
+
+  toggleFilters(isVisible: boolean) {
+    this.filtersIsVisible = isVisible;
+  }
+
+  sortedDates = '';
+
+  changeDatesOrder(value: string) {
+    this.sortedDates = value;
+  }
+
+  sortedViews = '';
+
+  changeViewsOrder(value: string) {
+    this.sortedViews = value;
+  }
+
+  searchInput = '';
+
+  showsearchInput(searchInput: string) {
+    this.searchInput = searchInput;
+  }
+
 }

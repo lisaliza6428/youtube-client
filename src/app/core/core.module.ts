@@ -8,6 +8,7 @@ import { SearchInputComponent } from './components/header/search-input/search-in
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { AuthenticationComponent } from './components/header/authentication/authentication.component';
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
+import { YoutubeModule } from '../youtube/youtube.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FilteringBlockComponent } from './components/filtering-block/filtering-
   imports: [
     CommonModule,
     FormsModule,
+    YoutubeModule,
   ],
   exports: [
     HeaderComponent,
