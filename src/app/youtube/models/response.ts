@@ -1,10 +1,10 @@
-export interface IResponse {
+export interface ResponceModel {
   kind: string,
   etag: string,
-  pageInfo: IPageInfo,
-  items: IVideoData[] 
+  pageInfo: PageInfoModel,
+  items: VideoDataModel[] 
 }
-export interface IVideoData {
+export interface VideoDataModel {
   kind: string,
   etag: string,
   id: string,
@@ -13,7 +13,7 @@ export interface IVideoData {
     channelId: string,
     title: string,
     description: string,
-    thumbnails: IThumbnails,
+    thumbnails: ThumbnailsModel,
     channelTitle: string,
     tags: string[],
     categoryId: string,
@@ -25,14 +25,14 @@ export interface IVideoData {
     },
     defaultAudioLanguage?: string,
   },
-  statistics: IStatistics,
+  statistics: StatisticsModel,
 }
-export interface IPageInfo {
+export interface PageInfoModel {
   totalResults: number,
   resultsPerPage: number,
 }
 
-export interface IStatistics {
+export interface StatisticsModel {
   viewCount: string,
   likeCount: string,
   dislikeCount: string,
@@ -40,7 +40,7 @@ export interface IStatistics {
   commentCount: string,
 }
 
-export interface IThumbnails {
+export interface ThumbnailsModel {
   default: {
     url: string,
     width: number,

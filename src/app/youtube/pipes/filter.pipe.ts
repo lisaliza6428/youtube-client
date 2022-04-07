@@ -1,13 +1,13 @@
 /* eslint-disable import/named */
 import { Pipe, PipeTransform } from '@angular/core';
-import { IVideoData  } from '../../app/models/response';
+import { VideoDataModel  } from '../models/response';
 
 @Pipe({
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(data: IVideoData[], input: string): IVideoData[] {
+  transform(data: VideoDataModel[], input: string): VideoDataModel[] {
     return  [...data].filter(x => x.snippet.title.toLowerCase().includes(input));
   }
 }

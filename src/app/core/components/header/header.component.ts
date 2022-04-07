@@ -7,6 +7,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent  {
 
+  
+
   isVisible = false;
 
   @Output() filtersIsVisible = new EventEmitter<boolean>();

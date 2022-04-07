@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IVideoData  } from '../../../app/models/response';
-import  json  from '../../../app/models/data.json';
+import { VideoDataModel  } from '../../../models/response';
+import  json  from '../../../models/data.json';
 const videoData = json.items;
 
 @Component({
@@ -15,7 +15,7 @@ export class ResultItemComponent {
 
   @Input() searchInput: string;
 
-  videos: IVideoData[] = [...videoData];
+  videos: VideoDataModel[] = [...videoData];
 
 
 }

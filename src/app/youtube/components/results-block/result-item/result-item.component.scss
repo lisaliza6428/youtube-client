@@ -45,16 +45,16 @@
         background-repeat: no-repeat;
       }
       &.stat__item--viewed::before {
-        background-image: url("../../../assets/viewed.svg");
+        background-image: url("../../../../../assets/viewed.svg");
       }
       &.stat__item--like::before {
-        background-image: url("../../../assets/liked.svg");
+        background-image: url("../../../../../assets/liked.svg");
       }
       &.stat__item--dislike::before {
-        background-image: url("../../../assets/dislike.svg");
+        background-image: url("../../../../../assets/dislike.svg");
       }
       &.stat__item--group::before {
-        background-image: url("../../../assets/group.svg");
+        background-image: url("../../../../../assets/group.svg");
       }
     }
   }
