@@ -9,7 +9,7 @@
           <span class="stat__item stat__item--group">{{ video.statistics.commentCount }}</span>
         </div>
         <h2 class="video__title">{{ video.snippet.title }}</h2>
-        <a class="video__more-button" href="/detailes">more...</a>
+        <a class="video__more-button" [routerLink]="'' + video.id">more...</a>
       </div>
     </li>
   </ul>

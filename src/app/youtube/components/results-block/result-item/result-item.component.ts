@@ -1,24 +1,31 @@
-import { Component, Input } from '@angular/core';
+/* eslint-disable import/named */
+import { Component, Input, OnInit } from '@angular/core';
 import { VideoDataModel  } from '../../../models/response';
-import  json  from '../../../models/data.json';
-const videoData = json.items;
+import { VideoDataService } from '../../../../core/services/video-data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-result-item',
   templateUrl: './result-item.component.html',
   styleUrls: ['./result-item.component.scss'],
+  providers: [VideoDataService],
+
 })
-export class ResultItemComponent {
+export class ResultItemComponent implements OnInit {
   @Input() sortedViews: string;
 
   @Input() sortedDates: string;
 
   @Input() searchInput: string;
 
-  videos: VideoDataModel[] = [...videoData];
+  videos: VideoDataModel[];
 
+  constructor(private dataService: VideoDataService){
+  }
 
+  ngOnInit(){
+    this.videos = this.dataService.getVideoData();
+
+  }
 }
-
-
-

@@ -7,6 +7,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { SortDatesPipe } from './pipes/sort-dates.pipe';
 import { SortViewsPipe } from './pipes/sort-views.pipe';
 import { DetailesPageComponent } from './pages/detailes-page/detailes-page.component';
+import { YoutubeRoutingModule } from './youtube-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DetailesPageComponent } from './pages/detailes-page/detailes-page.compo
   ],
   imports: [
     CommonModule,
+    YoutubeRoutingModule,
   ],
   exports: [
     ResultsBlockComponent,
