@@ -13,8 +13,6 @@ export class HeaderComponent  {
   isVisibleResults = false;
 
   showResultsBlock(): void {
-    console.log('HI!');
-    console.log(this.input.length);
     if (this.input.length != 0) {
       this.isVisibleResults = true;
     } else {

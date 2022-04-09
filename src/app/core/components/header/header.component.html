@@ -23,10 +23,12 @@
   (searchInput)="showsearchInput($event)"
 ></app-filtering-block>
 
-<app-results-block
-  *ngIf="isVisibleResults"
-  [searchInput]="searchInput"
-  [sortedViews]="sortedViews"
-  [sortedDates]="sortedDates"
-></app-results-block> 
 <router-outlet></router-outlet>
+
+<!-- <app-results-block
+></app-results-block>  -->
+
+<!-- *ngIf="isVisibleResults"
+[searchInput]="searchInput"
+[sortedViews]="sortedViews"
+[sortedDates]="sortedDates" -->

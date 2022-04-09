@@ -15,15 +15,14 @@ export class DetailesPageComponent implements OnInit {
   
   currentVideo: VideoDataModel;
 
-  constructor(private route: ActivatedRoute, private dataService: VideoDataService){ }
+  constructor(private route: ActivatedRoute, private dataService: VideoDataService){ 
+  }
 
   ngOnInit(){
     this.route.params.subscribe((params: Params) => {
       this.currentID = params['id'];
-      console.log(this.currentID);
-      this.currentVideo = this.dataService.getVideoDataById(this.currentID);
+      this.currentVideo = this.dataService.getVideoDataById(this.currentID)[0];
     });
-
   }
 
 }

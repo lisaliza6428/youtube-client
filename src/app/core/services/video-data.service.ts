@@ -11,7 +11,6 @@ export class VideoDataService {
 
   constructor() {
     this.videoData = json.items;
-    console.log(this.getVideoDataById('YN8zNnV0sK8'));
   }
 
   getVideoData() :VideoDataModel[]{
@@ -19,6 +18,6 @@ export class VideoDataService {
   }
 
   getVideoDataById(id: string) {
-    return this.videoData.filter(video => video.id === id)[0];
+    return this.videoData.filter(video => video.id === id);
   }
 }

@@ -2,8 +2,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { VideoDataModel  } from '../../../models/response';
 import { VideoDataService } from '../../../../core/services/video-data.service';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-result-item',
@@ -26,6 +24,9 @@ export class ResultItemComponent implements OnInit {
 
   ngOnInit(){
     this.videos = this.dataService.getVideoData();
+    this.searchInput = '';
+    this.sortedDates = 'asc';
+    this.sortedViews = '';
 
   }
 }
