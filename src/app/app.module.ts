@@ -5,6 +5,8 @@ import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { SortService } from './core/services/sort.service';
+import { LoginService } from './auth/services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { SortService } from './core/services/sort.service';
     AppRoutingModule,
     RouterModule,
   ],
-  providers: [SortService],
+  providers: [SortService, LoginService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

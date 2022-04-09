@@ -25,4 +25,8 @@ export class DetailesPageComponent implements OnInit {
     });
   }
 
+  historyBack(){
+    history.back();
+  }
+
 }
