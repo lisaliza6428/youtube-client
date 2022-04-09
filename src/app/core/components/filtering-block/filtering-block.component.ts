@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { SortService } from '../../services/sort.service';
 
 @Component({
   selector: 'app-filtering-block',
@@ -7,44 +8,14 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class FilteringBlockComponent  {
 
-  @Input() sortedDates: string;
+  constructor(public sortServ: SortService) { }
 
-  @Output() datesOrder = new EventEmitter<string>();
-
-  changeDateOrder(value: string) {
-    switch (value) {
-      case '':
-        value = 'asc';
-        break;
-      case 'asc':
-        value = 'desc';
-        break;
-      case 'desc':
-        value = 'asc';
-        break;
-    }
-    this.datesOrder.emit(value);
-    this.viewsOrder.emit('');
+  toggleSortDates() {
+    this.sortServ.toggleSortDates();
   }
 
-  @Input() sortedViews: string;
-
-  @Output() viewsOrder = new EventEmitter<string>();
-
-  changeViewsOrder(value: string) {
-    switch (value) {
-      case '':
-        value = 'asc';
-        break;
-      case 'asc':
-        value = 'desc';
-        break;
-      case 'desc':
-        value = 'asc';
-        break;
-    }
-    this.viewsOrder.emit(value);
-    this.datesOrder.emit('');
+  toggleSortViews() {
+    this.sortServ.toggleSortViews();
   }
 
 
@@ -52,7 +23,7 @@ export class FilteringBlockComponent  {
 
   filter(e: KeyboardEvent){
     const value = (e.target as HTMLInputElement).value.toLowerCase();
-    this.searchInput.emit(value.toLowerCase());
+    this.sortServ.checkFilterInput(value);
   }
 
 }

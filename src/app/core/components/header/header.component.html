@@ -16,10 +16,6 @@
 
 <app-filtering-block
   *ngIf="filtersIsVisible"
-  [sortedViews]="sortedViews"
-  (viewsOrder)="changeViewsOrder($event)"
-  [sortedDates]="sortedDates"
-  (datesOrder)="changeDatesOrder($event)"
   (searchInput)="showsearchInput($event)"
 ></app-filtering-block>
 
