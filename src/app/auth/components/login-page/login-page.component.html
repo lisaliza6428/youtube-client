@@ -6,8 +6,8 @@
     <h3 class="login-form__field-title">password</h3>
     <input class="login-form__field-input" type="text">
     <div class="buttons-wrapper">
-      <a class="">Registration</a>
-      <button class="login-form__submit" type="submit">Login</button>
+      <button class="login-form__submit" (click)="loginService.logIn()" type="button">Login</button>
+      <button class="login-form__submit" (click)="loginService.logOut()" type="button">LogOut</button>
     </div>
   </form>
 </div>
