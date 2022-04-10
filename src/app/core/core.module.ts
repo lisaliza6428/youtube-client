@@ -8,8 +8,7 @@ import { SearchInputComponent } from './components/header/search-input/search-in
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { AuthenticationComponent } from './components/header/authentication/authentication.component';
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
-import { YoutubeModule } from '../youtube/youtube.module';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
   imports: [
     CommonModule,
     FormsModule,
-    YoutubeModule,
     RouterModule,
   ],
   exports: [
