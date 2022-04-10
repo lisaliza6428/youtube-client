@@ -2,23 +2,26 @@
   margin-top: 50px;
   display: flex;
   align-items: flex-start;
-  .btn {
+  .button-back {
     width: 5%;
     height: 50px;
     border: none;
-    background-color: aqua;
+    background-color: #2f80ed;
+    border-radius: 5px 0 0 5px;
   }
-  .img {
+  .video-image {
     width: 60%;
   }
-  .detailes {
+  .video-detailes {
+    padding: 30px;
     width: 35%;
-    margin: 30px 0 30px 30px;
+    width: 360px;
     display: flex;
     flex-direction: column;
+    background-color: #E5E5E5;
   }
 }
-.wrap {
+.video-info {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -61,7 +64,7 @@ text-align: justify;
 
 .video__stat {
   &:last-child {
-    margin-top: 200px;
+    margin-top: 20px;
   } 
   display: flex;
   flex-direction: row;

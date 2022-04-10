@@ -1,9 +1,9 @@
  <div class="container">
   <div class="wrapper">
-    <button class="btn" (click)="historyBack()">Back</button>
-    <img class="img" [src]="currentVideo.snippet.thumbnails.medium.url" alt="">
-    <div class="detailes">
-      <div class="wrap">
+    <button class="button-back" (click)="historyBack()">Back</button>
+    <img class="video-image" [src]="currentVideo.snippet.thumbnails.high.url" alt="">
+    <div class="video-detailes" [appCardBorderStyle]="currentVideo.snippet.publishedAt">
+      <div class="video-info">
         <div class="video__title">{{ currentVideo.snippet.title }}</div>
         <div class="video__date">{{ currentVideo.snippet.publishedAt | date:"full" }}</div>
       </div>

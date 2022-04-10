@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/header/logo/logo.component';
-import { SearchInputComponent } from './components/header/search-input/search-input.component';
 import { SettingsButtonComponent } from './components/header/settings-button/settings-button.component';
 import { AuthenticationComponent } from './components/header/authentication/authentication.component';
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
@@ -15,7 +14,6 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
   declarations: [
     HeaderComponent,
     LogoComponent,
-    SearchInputComponent,
     SettingsButtonComponent,
     AuthenticationComponent,
     FilteringBlockComponent,
@@ -29,7 +27,6 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
   exports: [
     HeaderComponent,
     LogoComponent,
-    SearchInputComponent,
     SettingsButtonComponent,
     AuthenticationComponent,
     FilteringBlockComponent,
