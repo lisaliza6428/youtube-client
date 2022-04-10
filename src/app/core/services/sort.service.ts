@@ -13,11 +13,15 @@ export class SortService {
 
   filterInput = '';
 
+  resultsIsVisible = false;
+
   sortDatesChange: Subject<string> = new Subject<string>();
 
   sortViewsChange: Subject<string> = new Subject<string>();
 
   filterInputChange: Subject<string> = new Subject<string>();
+
+  resultsVisibilityChange: Subject<boolean> = new Subject<boolean>();
 
   constructor()  {
     this.sortDatesChange.subscribe((value) => {
@@ -28,6 +32,9 @@ export class SortService {
     });
     this.filterInputChange.subscribe((value) => {
       this.filterInput = value;
+    });
+    this.resultsVisibilityChange.subscribe((value) => {
+      this.resultsIsVisible = value;
     });
   }
 
@@ -67,6 +74,10 @@ export class SortService {
 
   checkFilterInput(value: string) {
     this.filterInputChange.next(value);
+  }
+
+  checkResultsVisibility(value:boolean){
+    this.resultsVisibilityChange.next(value);
   }
 
 }

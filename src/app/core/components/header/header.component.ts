@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SortService } from '../../services/sort.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent  {
 
+  constructor(public sortServ: SortService) { }
 
   input = '';
 
@@ -18,6 +20,7 @@ export class HeaderComponent  {
     } else {
       this.isVisibleResults = false;
     }
+    this.sortServ.checkResultsVisibility(this.isVisibleResults);
   }
 
 

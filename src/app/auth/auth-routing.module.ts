@@ -1,7 +1,7 @@
 /* eslint-disable import/named */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './components/login-page/login-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   {
