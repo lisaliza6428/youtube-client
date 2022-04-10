@@ -1,0 +1,20 @@
+ <div class="container">
+  <div class="wrapper">
+    <button class="button-back" (click)="historyBack()">Back</button>
+    <img class="video-image" [src]="currentVideo.snippet.thumbnails.high.url" alt="">
+    <div class="video-detailes" [appCardBorderStyle]="currentVideo.snippet.publishedAt">
+      <div class="video-info">
+        <div class="video__title">{{ currentVideo.snippet.title }}</div>
+        <div class="video__date">{{ currentVideo.snippet.publishedAt | date:"full" }}</div>
+      </div>
+      <h3 class="video__descr-title">Description:</h3>
+      <p class="video__descr">{{ currentVideo.snippet.description }}</p>
+      <div class="video__stat">
+        <span class="stat__item stat__item--viewed">{{ currentVideo.statistics.viewCount }}</span>
+        <span class="stat__item stat__item--like">{{ currentVideo.statistics.likeCount }}</span>
+        <span class="stat__item stat__item--dislike">{{ currentVideo.statistics.dislikeCount }}</span>
+        <span class="stat__item stat__item--group">{{ currentVideo.statistics.commentCount }}</span>
+      </div>
+    </div>  
+  </div>
+</div>
