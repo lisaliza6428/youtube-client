@@ -15,7 +15,7 @@ export class HeaderComponent  {
   isVisibleResults = false;
 
   showResultsBlock(): void {
-    if (this.input.length != 0) {
+    if (this.input.length >= 3) {
       this.isVisibleResults = true;
     } else {
       this.isVisibleResults = false;

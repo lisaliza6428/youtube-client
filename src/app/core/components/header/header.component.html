@@ -3,8 +3,7 @@
     <div class="header">
       <div class="header__left">
         <app-logo routerLink="/main"></app-logo>
-        <input [(ngModel)]="input" class="search-input" type="text" placeholder="What are you want to find out?">
-        <button (click)="showResultsBlock()" class="search-button" type="button">search</button>
+        <input [(ngModel)]="input" (input)="showResultsBlock()" class="search-input" type="text" placeholder="What are you want to find out?">
         <app-settings-button (filtersIsVisible)="toggleFilters($event)"></app-settings-button>
       </div>
       <app-authentication></app-authentication>
