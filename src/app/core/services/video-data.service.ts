@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
-import  json  from '../../youtube/models/data.json';
-import { VideoDataModel  } from '../../youtube/models/response';
+import { VideoDataModel, ResponceModel  } from '../../youtube/models/response';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class VideoDataService {
 
-  videoData: VideoDataModel[];
+  videoData: VideoDataModel[] = [];
 
-  constructor() {
-    this.videoData = json.items;
-  }
+  constructor(private http: HttpClient) { }
 
-  getVideoData() :VideoDataModel[]{
-    return this.videoData;
+
+  key = 'AIzaSyBiOrxNjJSg051IC_YWU188CXhzd720M80';
+
+  baseURL = 'https://www.googleapis.com/youtube/v3';
+
+ 
+  getVideoData(): Observable<VideoDataModel[]> {
+    return this.http.get<ResponceModel>(`${this.baseURL}/search?key=${this.key}&type=video&part=snippet&maxResults=12&q=js`).pipe(map((res: ResponceModel)  => res.items));
   }
 
   getVideoDataById(id: string) {
-    return this.videoData.filter(video => video.id === id);
+    return this.http.get<ResponceModel>(`${this.baseURL}/videos?key=${this.key}&id=${id}&part=snippet,statistics`);
   }
 }

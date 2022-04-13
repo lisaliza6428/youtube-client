@@ -1,4 +1,4 @@
- <div class="container">
+ <div *ngIf="currentVideo" class="container">
   <div class="wrapper">
     <button class="button-back" (click)="historyBack()"><img src="../../../../assets/arrow.svg" alt="back"></button>
     <img class="video-image" [src]="currentVideo.snippet.thumbnails.high.url" alt="">

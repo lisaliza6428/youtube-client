@@ -1,7 +1,7 @@
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { VideoDataModel } from '../../models/response';
+import { VideoDataModel, ResponceModel } from '../../models/response';
 import { VideoDataService } from '../../../core/services/video-data.service';
 
 @Component({
@@ -21,7 +21,8 @@ export class DetailesPageComponent implements OnInit {
   ngOnInit(){
     this.route.params.subscribe((params: Params) => {
       this.currentID = params['id'];
-      this.currentVideo = this.dataService.getVideoDataById(this.currentID)[0];
+      console.log(this.currentID);
+      this.getVideo(this.currentID);
     });
   }
 
@@ -29,4 +30,13 @@ export class DetailesPageComponent implements OnInit {
     history.back();
   }
 
+  getVideo(id: string){
+    this.dataService.getVideoDataById(id)
+      .subscribe((video: ResponceModel) => {
+        console.log(video);
+        this.currentVideo = video.items[0];
+        console.log(video.items[0]);
+      });
+  }
 }
+

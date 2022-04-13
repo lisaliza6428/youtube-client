@@ -7,7 +7,10 @@ export interface ResponceModel {
 export interface VideoDataModel {
   kind: string,
   etag: string,
-  id: string,
+  id: {
+    kind: string,
+    videoId: string,
+  },
   snippet: {
     publishedAt: string,
     channelId: string,
