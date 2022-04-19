@@ -9,6 +9,7 @@ import { AuthenticationComponent } from './components/header/authentication/auth
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { AdminPageComponent } from '../auth/pages/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     AuthenticationComponent,
     FilteringBlockComponent,
     ErrorPageComponent,
+    AdminPageComponent,
   ],
   imports: [
     CommonModule,

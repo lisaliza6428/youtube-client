@@ -1,0 +1,60 @@
+.admin-form {
+  *{
+    margin-bottom: 7px;
+  }
+  width: 500px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 100px auto;
+  padding: 25px;
+
+  .admin-form__title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    margin-bottom: 20px;
+  
+  }
+  .admin-form__field-title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    color: #828282;
+  
+  }
+  .admin-form__field-input{
+    width: 100%;
+    height: 45px;
+    background-color: #E0E0E0;
+    border: 1px solid #E0E0E0;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    &:focus{
+      outline: none;
+      border: 1px solid blue;
+    }
+  
+  }
+  .admin-form__submit {
+    width: 124px;
+    height: 30px;
+    color: white;
+    background-color: #2F80ED;
+    border: 1px solid #2F80ED ;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+
+
+}

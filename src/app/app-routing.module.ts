@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
 import { DetailesPageComponent } from './youtube/pages/detailes-page/detailes-page.component';
+import { AdminPageComponent } from './auth/pages/admin-page/admin-page.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
@@ -29,9 +30,15 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
+  { path: 'admin',
+    pathMatch: 'full',
+    component: AdminPageComponent,
+    canActivate: [AuthGuard],
+  },
   { path: '**',
     pathMatch: 'full',
-    component: ErrorPageComponent },
+    component: ErrorPageComponent,
+  },
 ];
 
 @NgModule({
