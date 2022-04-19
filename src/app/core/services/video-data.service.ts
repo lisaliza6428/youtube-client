@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VideoDataModel, ResponceModel  } from '../../youtube/models/response';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
@@ -10,18 +10,35 @@ import { map } from 'rxjs/operators';
 })
 export class VideoDataService {
 
-  videoData: VideoDataModel[] = [];
-
-  constructor(private http: HttpClient) { }
-
-
-  key = 'AIzaSyBiOrxNjJSg051IC_YWU188CXhzd720M80';
+  key = 'AIzaSyAbttM3s9GTUv0Vg6YFCWx2jeX0-xJO_mQ';
 
   baseURL = 'https://www.googleapis.com/youtube/v3';
 
- 
-  getVideoData(): Observable<VideoDataModel[]> {
-    return this.http.get<ResponceModel>(`${this.baseURL}/search?key=${this.key}&type=video&part=snippet&maxResults=12&q=js`).pipe(map((res: ResponceModel)  => res.items));
+  videos: VideoDataModel[] = [];
+
+  searchInput = '';
+
+  searchInputChange: Subject<string> = new Subject<string>();
+
+  dataChange: Subject<VideoDataModel[]> = new Subject<VideoDataModel[]>();
+
+  constructor(private http: HttpClient) {
+    this.searchInputChange.subscribe((value) => {
+      this.searchInput = value;
+    });
+    this.dataChange.subscribe((value) => {
+      this.videos = value;
+    });
+  }
+
+  getVideoData(searchInput: string) {
+    console.log(this.searchInput);
+    this.http.get<ResponceModel>(`${this.baseURL}/search?key=${this.key}&type=video&part=snippet&maxResults=12&q=${searchInput}`).pipe(map((res: ResponceModel)  => res.items)).subscribe(videos => {
+      this.videos = videos;
+      console.log(this.videos);
+      this.dataChange.next(this.videos);
+    });
+
   }
 
   getVideoDataById(id: string) {

@@ -19,29 +19,25 @@ export class ResultItemComponent implements OnInit {
 
   searchInput = '';
 
+  search = '';
+
   videos: VideoDataModel[] = [];
 
-  heroes: VideoDataModel[];
-
-  constructor(private dataService: VideoDataService, public sortServ: SortService){
+  constructor(public dataService: VideoDataService, public sortServ: SortService){
     this.sortedDates = sortServ.sDate;
     this.sortedViews = sortServ.sViews;
     this.searchInput = sortServ.filterInput;
-
+    this.search = dataService.searchInput;
+    this.videos = dataService.videos;
   }
 
   ngOnInit(){
-    this.getVideoData();
     this.sortServ.sortDatesChange.subscribe(value => {this.sortedDates = value;});
     this.sortServ.sortViewsChange.subscribe(value => {this.sortedViews = value;});
     this.sortServ.filterInputChange.subscribe(value => {this.searchInput = value;});
-  }
-
-  getVideoData(){
-    this.dataService.getVideoData()
-      .subscribe(videos => {
-        this.videos = videos;
-        console.log(this.videos);
-      });
+    this.dataService.searchInputChange.subscribe(value => {this.search = value;});
+    this.dataService.dataChange.subscribe(videos => {
+      this.videos = videos;
+    });
   }
 }

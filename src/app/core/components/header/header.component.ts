@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { SortService } from '../../services/sort.service';
+import { VideoDataService } from '../../services/video-data.service';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -8,21 +11,21 @@ import { SortService } from '../../services/sort.service';
 })
 export class HeaderComponent  {
 
-  constructor(public sortServ: SortService) { }
+  mainSearchInputUpdate = new Subject<string>();
 
-  input = '';
+  public mainSearchInput: string;
 
-  isVisibleResults = false;
-
-  showResultsBlock(): void {
-    if (this.input.length >= 3) {
-      this.isVisibleResults = true;
-    } else {
-      this.isVisibleResults = false;
-    }
-    this.sortServ.checkResultsVisibility(this.isVisibleResults);
+  constructor(public sortServ: SortService, public dataServ: VideoDataService) { 
+    this.mainSearchInputUpdate.pipe(
+      debounceTime(400),
+      distinctUntilChanged())
+      .subscribe(value => {
+        if (value.length >= 3){
+          this.dataServ.searchInputChange.next(value);
+          this.dataServ.getVideoData(value);
+        }
+      });
   }
-
 
   filtersIsVisible = false;
 
