@@ -3,14 +3,21 @@
     <h2 class="login-form__title">Login</h2>
     <h3 class="login-form__field-title">login</h3>
     <input class="login-form__field-input" formControlName="login" name="login" id="login" type="text">
+    <div class="message" *ngIf="formGroup.controls['login'].untouched">
+      Please enter a login email
+    </div>
     <div class="error" *ngIf="isControlInvalid('login')">
       The login email is invalid
     </div>
     <h3 class="login-form__field-title">password</h3>
     <input class="login-form__field-input" formControlName="password" type="text">
+    <div class="message" *ngIf="formGroup.controls['password'].untouched">
+      Please enter a password
+    </div>
+ 
     <div class="error" *ngIf="isControlInvalid('password')">
       Your password isn't strong enough. <br> 
-      Rules: at least 8 characters, <br> 
+      Use at least 8 characters, <br> 
       both uppercase and lowercase letters, <br> 
       both letters and numbers, <br> 
       at least one special character (!?@#$%^&*)
@@ -20,7 +27,3 @@
     </div>
   </form>
 </div>
-
-
-
-<!-- <button class="login-form__submit" (click)="loginService.logIn()" type="button">Login</button> -->

@@ -30,14 +30,13 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submit');
-    console.log(this.formGroup.value);
-    console.log(this.formGroup.status);
-  /*     if (this.formGroup?.valid) {
-      this.loginService.login(this.formGroup.value).subscribe(() => {
-        this.router.navigateByUrl('/');
-      });
-    } */
+    if (this.formGroup.status === 'VALID'){
+      console.log('submited!');
+      console.log(this.formGroup.value);
+      this.loginService.logIn();
+    } else {
+      console.log('Error!');
+    }
   }
 
 }
