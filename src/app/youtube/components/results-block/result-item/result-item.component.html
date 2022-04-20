@@ -3,13 +3,13 @@
       <div [appCardBorderStyle]="video.snippet.publishedAt" class="video__card">
         <img class="video__image" [src]="video.snippet.thumbnails.medium.url" alt="video">
         <div class="video__stat">
-          <span class="stat__item stat__item--viewed">{{ video.statistics?.viewCount }}</span>
-          <span class="stat__item stat__item--like">{{ video.statistics?.likeCount }}</span>
-          <span class="stat__item stat__item--dislike">{{ video.statistics?.dislikeCount }}</span>
-          <span class="stat__item stat__item--group">{{ video.statistics?.commentCount }}</span>
+          <span *ngIf="video.statistics.viewCount" class="stat__item stat__item--viewed">{{ video.statistics?.viewCount }}</span>
+          <span *ngIf="video.statistics.likeCount" class="stat__item stat__item--like">{{ video.statistics?.likeCount }}</span>
+          <span *ngIf="video.statistics.favoriteCount" class="stat__item stat__item--dislike">{{ video.statistics?.favoriteCount }}</span>
+          <span *ngIf="video.statistics.commentCount" class="stat__item stat__item--group">{{ video.statistics?.commentCount }}</span>
         </div>
         <h2 class="video__title">{{ video.snippet.title }}</h2>
-        <a class="video__more-button" [routerLink]="'/main/video/' + video.id.videoId">more...</a>
+        <a class="video__more-button" [routerLink]="'/main/video/' + video.id">more...</a>
       </div>
     </li>
   </ul>

@@ -12,29 +12,27 @@ import { VideoDataService } from '../../../core/services/video-data.service';
 export class DetailesPageComponent implements OnInit {
 
   currentID: '';
-  
-  currentVideo: VideoDataModel;
 
-  constructor(private route: ActivatedRoute, private dataService: VideoDataService){ 
+  video: VideoDataModel;
+
+  constructor(private route: ActivatedRoute, private dataService: VideoDataService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.currentID = params['id'];
-      console.log(this.currentID);
       this.getVideo(this.currentID);
     });
   }
 
-  historyBack(){
+  historyBack() {
     history.back();
   }
 
-  getVideo(id: string){
+  getVideo(id: string) {
     this.dataService.getVideoDataById(id)
       .subscribe((video: ResponceModel) => {
-        console.log(video);
-        this.currentVideo = video.items[0];
+        this.video = video.items[0];
         console.log(video.items[0]);
       });
   }
