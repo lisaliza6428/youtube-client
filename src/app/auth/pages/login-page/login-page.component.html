@@ -1,14 +1,26 @@
 <div class="container">
-  <form class="login-form" action="">
+  <form class="login-form" action="" [formGroup]="formGroup" (submit)="onSubmit()">
     <h2 class="login-form__title">Login</h2>
     <h3 class="login-form__field-title">login</h3>
-    <input class="login-form__field-input" type="text">
+    <input class="login-form__field-input" formControlName="login" name="login" id="login" type="text">
+    <div class="error" *ngIf="isControlInvalid('login')">
+      The login email is invalid
+    </div>
     <h3 class="login-form__field-title">password</h3>
-    <input class="login-form__field-input" type="text">
+    <input class="login-form__field-input" formControlName="password" type="text">
+    <div class="error" *ngIf="isControlInvalid('password')">
+      Your password isn't strong enough. <br> 
+      Rules: at least 8 characters, <br> 
+      both uppercase and lowercase letters, <br> 
+      both letters and numbers, <br> 
+      at least one special character (!?@#$%^&*)
+    </div>
     <div class="buttons-wrapper">
-      <button class="login-form__submit" (click)="loginService.logIn()" type="button">Login</button>
+      <button class="login-form__submit" type="submit">Login</button>
     </div>
   </form>
 </div>
 
 
+
+<!-- <button class="login-form__submit" (click)="loginService.logIn()" type="button">Login</button> -->
