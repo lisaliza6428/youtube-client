@@ -1,4 +1,5 @@
 .admin-form {
+
   width: 500px;
   border: 1px solid black;
   border-radius: 5px;
@@ -59,5 +60,10 @@
    margin: 0;
  }
 
-
+ .ng-invalid.ng-touched {
+  border: red 1px solid;
+}
+.ng-valid.ng-touched {
+  border: green 1px solid;
+}
 }
