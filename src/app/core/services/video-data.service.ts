@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
 import { VideoDataModel, ResponceModel } from '../../youtube/models/response';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root',
 })
 export class VideoDataService {
-
-  key = 'AIzaSyAbttM3s9GTUv0Vg6YFCWx2jeX0-xJO_mQ';
-
-  baseURL = 'https://www.googleapis.com/youtube/v3';
 
   videos: VideoDataModel[] = [];
 
@@ -32,7 +27,12 @@ export class VideoDataService {
   }
 
   getVideoData(searchInput: string) {
-    this.http.get<ResponceModel>(`${this.baseURL}/search?key=${this.key}&type=video&part=snippet&maxResults=12&q=${searchInput}`).pipe(map((res: ResponceModel) => res.items)).subscribe(data => {
+    const params = new HttpParams()
+      .set('part', 'snippet')
+      .set('type', 'video')
+      .set('maxResults', '12')
+      .set('q', searchInput);
+    this.http.get<ResponceModel>('search', { params }).pipe(map((res: ResponceModel) => res.items)).subscribe(data => {
       const array: string[] = [];
       data.map(x => array.push(x.id.videoId));
       const arrayIDs: string = array.join();
@@ -44,6 +44,9 @@ export class VideoDataService {
   }
 
   getVideoDataById(id: string) {
-    return this.http.get<ResponceModel>(`${this.baseURL}/videos?key=${this.key}&id=${id}&part=snippet,statistics`);
+    const params = new HttpParams()
+      .set('id', id)
+      .set('part', 'snippet,statistics');
+    return this.http.get<ResponceModel>('videos', { params });
   }
 }

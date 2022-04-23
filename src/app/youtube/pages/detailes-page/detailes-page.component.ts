@@ -33,7 +33,7 @@ export class DetailesPageComponent implements OnInit {
     this.dataService.getVideoDataById(id)
       .subscribe((video: ResponceModel) => {
         this.video = video.items[0];
-        console.log(video.items[0]);
+        // console.log(video.items[0]);
       });
   }
 }
