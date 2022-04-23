@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { validateSpecial, validateUpperLowerCase, validateNumbersLetters } from './validators';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginPageComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(public fb: FormBuilder, public loginService: LoginService) {}
+  constructor(public fb: FormBuilder, public loginService: LoginService) { }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
@@ -21,22 +22,24 @@ export class LoginPageComponent implements OnInit {
       password: ['', [
         Validators.required,
         Validators.minLength(8),
-        Validators.pattern(/(?=.*[0-9])(?=.*[!?@#$%^&*])(?=.*[a-z])(?=.*[A-Z])/),
-        
+        validateSpecial,
+        validateUpperLowerCase,
+        validateNumbersLetters,
+
       ]],
     });
   }
 
-  get _login(){
+  get _login() {
     return this.formGroup.controls['login'];
   }
 
-  get _password(){
+  get _password() {
     return this.formGroup.controls['password'];
   }
 
   onSubmit() {
-    if (this.formGroup.status === 'VALID'){
+    if (this.formGroup.status === 'VALID') {
       console.log('submited!');
       console.log(this.formGroup.value);
       this.loginService.logIn();

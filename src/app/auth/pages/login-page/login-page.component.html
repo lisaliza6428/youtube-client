@@ -18,11 +18,14 @@
       <div *ngIf="_password.invalid && (_password.touched || _password.dirty || _password.untouched)">
         <span class="message" *ngIf="_password.errors?.['required']">Please enter a password</span>
         <span class="message" *ngIf="_password.errors?.['minlength']">At least 8 characters</span>
-        <span class="message" *ngIf="_password.errors?.['pattern']"><br> 
-          Both uppercase and lowercase letters, <br> 
-          Both letters and numbers, <br> 
+        <span class="message" *ngIf="_password.errors?.['validateUpperLowerCase'] && _password.dirty"><br>
+          Both uppercase and lowercase letters</span>
+          <span class="message" *ngIf="_password.errors?.['validateNumbersLetters'] && _password.dirty"><br>
+            Both numbers and letters</span>
+        <span class="message" *ngIf="_password.errors?.['validateSpecial'] && _password.dirty"><br>
           At least one special character (!?@#$%^&*)</span>
       </div>
+
     </div>
     <div class="buttons-wrapper">
       <button class="login-form__submit" [disabled]="formGroup.invalid" type="submit">Login</button>
