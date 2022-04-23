@@ -18,15 +18,21 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     this.formGroup = this.fb.group({
       login: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/(?=.*[0-9])(?=.*[!?@#$%^&*])(?=.*[a-z])(?=.*[A-Z])/), Validators.minLength(8)]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/(?=.*[0-9])(?=.*[!?@#$%^&*])(?=.*[a-z])(?=.*[A-Z])/),
+        
+      ]],
     });
-
   }
 
-  isControlInvalid(controlName: string): boolean {
-    const control = this.formGroup.controls[controlName];
-    const result = control.invalid && control.touched;
-    return result;
+  get _login(){
+    return this.formGroup.controls['login'];
+  }
+
+  get _password(){
+    return this.formGroup.controls['password'];
   }
 
   onSubmit() {
@@ -38,5 +44,4 @@ export class LoginPageComponent implements OnInit {
       console.log('Error!');
     }
   }
-
 }

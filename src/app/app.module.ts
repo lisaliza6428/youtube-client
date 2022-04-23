@@ -9,7 +9,6 @@ import { VideoDataService } from './core/services/video-data.service';
 import { LoginService } from './auth/services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,

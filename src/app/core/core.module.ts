@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/header/logo/logo.component';
@@ -10,6 +10,7 @@ import { FilteringBlockComponent } from './components/filtering-block/filtering-
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { AdminPageComponent } from '../auth/pages/admin-page/admin-page.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AdminPageComponent } from '../auth/pages/admin-page/admin-page.componen
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
   ],
   exports: [

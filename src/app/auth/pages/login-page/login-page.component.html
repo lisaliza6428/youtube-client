@@ -1,26 +1,28 @@
 <div class="container">
-  <form class="login-form" action="" [formGroup]="formGroup" (submit)="onSubmit()">
-    <h2 class="login-form__title">Login</h2>
+  <form class="login-form" [formGroup]="formGroup" (submit)="onSubmit()">
+    <h2 class="login-form__password">Login</h2>
     <h3 class="login-form__field-title">login</h3>
     <input class="login-form__field-input" formControlName="login" name="login" id="login" type="text">
-    <div class="message" *ngIf="formGroup.controls['login'].untouched">
-      Please enter a login email
+
+    <div class="message-container">
+      <div *ngIf="_login.invalid && (_login.touched || _login.dirty)">
+        <span class="message" *ngIf="_login.errors?.['required']">Please enter login email</span>
+        <span class="message" *ngIf="_login.errors?.['email']">The login email is invalid</span>
+      </div>
     </div>
-    <div class="error" *ngIf="isControlInvalid('login')">
-      The login email is invalid
-    </div>
+
     <h3 class="login-form__field-title">password</h3>
     <input class="login-form__field-input" formControlName="password" type="text">
-    <div class="message" *ngIf="formGroup.controls['password'].untouched">
-      Please enter a password
-    </div>
- 
-    <div class="error" *ngIf="isControlInvalid('password')">
-      Your password isn't strong enough. <br> 
-      Use at least 8 characters, <br> 
-      both uppercase and lowercase letters, <br> 
-      both letters and numbers, <br> 
-      at least one special character (!?@#$%^&*)
+
+    <div class="message-container">
+      <div *ngIf="_password.invalid && (_password.touched || _password.dirty)">
+        <span class="message" *ngIf="_password.errors?.['required']">Please enter a password</span>
+        <span class="message" *ngIf="_password.errors?.['minlength']">At least 8 characters</span>
+        <span class="message" *ngIf="_password.errors?.['pattern']"><br> 
+          Both uppercase and lowercase letters, <br> 
+          Both letters and numbers, <br> 
+          At least one special character (!?@#$%^&*)</span>
+      </div>
     </div>
     <div class="buttons-wrapper">
       <button class="login-form__submit" type="submit">Login</button>
