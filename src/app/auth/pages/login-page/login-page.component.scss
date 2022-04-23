@@ -33,7 +33,16 @@
     &:focus{
       outline: none;
       border: 1px solid blue;
-    } 
+    }
+    &.ng-invalid.ng-touched {
+      border: red 1px solid;
+    }
+    &.ng-invalid.ng-dirty {
+      border: red 1px solid;
+    }
+    &.ng-valid.ng-touched {
+      border: green 1px solid;
+    }
   }
   .login-form__submit {
     width: 124px;
@@ -43,6 +52,10 @@
     border: 1px solid #2F80ED ;
     border-radius: 5px;
     margin-left: 10px;
+    &:disabled {
+      background-color: grey;
+      cursor: auto;
+    }
   }
   .buttons-wrapper {
     display: flex;
@@ -61,5 +74,4 @@
   margin: 0;
 }
 
-input.ng-touched.ng-invalid {border:solid red 2px;}
-input.ng-touched.ng-valid {border:solid green 2px;}
+

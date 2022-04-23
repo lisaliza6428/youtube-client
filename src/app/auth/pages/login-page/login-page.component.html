@@ -5,7 +5,7 @@
     <input class="login-form__field-input" formControlName="login" name="login" id="login" type="text">
 
     <div class="message-container">
-      <div *ngIf="_login.invalid && (_login.touched || _login.dirty)">
+      <div *ngIf="_login.invalid && (_login.touched || _login.dirty || _login.untouched)">
         <span class="message" *ngIf="_login.errors?.['required']">Please enter login email</span>
         <span class="message" *ngIf="_login.errors?.['email']">The login email is invalid</span>
       </div>
@@ -15,7 +15,7 @@
     <input class="login-form__field-input" formControlName="password" type="text">
 
     <div class="message-container">
-      <div *ngIf="_password.invalid && (_password.touched || _password.dirty)">
+      <div *ngIf="_password.invalid && (_password.touched || _password.dirty || _password.untouched)">
         <span class="message" *ngIf="_password.errors?.['required']">Please enter a password</span>
         <span class="message" *ngIf="_password.errors?.['minlength']">At least 8 characters</span>
         <span class="message" *ngIf="_password.errors?.['pattern']"><br> 
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="buttons-wrapper">
-      <button class="login-form__submit" type="submit">Login</button>
+      <button class="login-form__submit" [disabled]="formGroup.invalid" type="submit">Login</button>
     </div>
   </form>
 </div>
