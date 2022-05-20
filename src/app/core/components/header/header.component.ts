@@ -3,6 +3,7 @@ import { SortService } from '../../services/sort.service';
 import { VideoDataService } from '../../services/video-data.service';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { LoginService } from '../../../auth/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,10 @@ export class HeaderComponent  {
 
   public mainSearchInput: string;
 
-  constructor(public sortServ: SortService, public dataServ: VideoDataService) { 
+  constructor(
+    public sortServ: SortService,
+    public dataServ: VideoDataService,
+    public loginService: LoginService) { 
     this.mainSearchInputUpdate.pipe(
       debounceTime(400),
       distinctUntilChanged())

@@ -5,6 +5,7 @@
 
     <h3 class="admin-form__field-title">Title:</h3>
     <input class="admin-form__field-input" formControlName="title" type="text">
+    
     <div class="message-container">
       <div *ngIf="_title.invalid && (_title.touched || _title.dirty || _title.untouched)">
         <span class="message" *ngIf="_title.errors?.['required']">Please enter a title</span>

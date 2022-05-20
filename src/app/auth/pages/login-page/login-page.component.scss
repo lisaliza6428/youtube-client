@@ -17,7 +17,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
     color: #828282;
     margin: 10px 0;
@@ -68,6 +68,7 @@
 .message {
   color: red;
   font-size: 14px;
+  display: block;
 }
 .message-container {
   min-height: 20px;

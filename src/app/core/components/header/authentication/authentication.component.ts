@@ -10,5 +10,4 @@ export class AuthenticationComponent  {
 
   constructor(public loginService: LoginService) {}
 
-
 }

@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { validateSpecial, validateUpperLowerCase, validateNumbersLetters } from './validators';
+import { validateUpperCase, validateLowerCase, validateNumbers, validateSpecial } from './validators';
 
 
 @Component({
@@ -21,11 +21,11 @@ export class LoginPageComponent implements OnInit {
       login: ['', [Validators.required, Validators.email]],
       password: ['', [
         Validators.required,
-        Validators.minLength(8),
+        validateUpperCase,
+        validateLowerCase,
+        validateNumbers,
         validateSpecial,
-        validateUpperLowerCase,
-        validateNumbersLetters,
-
+        Validators.minLength(8),
       ]],
     });
   }
@@ -40,11 +40,7 @@ export class LoginPageComponent implements OnInit {
 
   onSubmit() {
     if (this.formGroup.status === 'VALID') {
-      console.log('submited!');
-      console.log(this.formGroup.value);
       this.loginService.logIn();
-    } else {
-      console.log('Error!');
     }
   }
 }

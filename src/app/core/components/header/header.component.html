@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header">
       <div class="header__left">
-        <app-logo routerLink="/main"></app-logo>
+        <app-logo routerLink="/main" ></app-logo>
         <input class="search-input" [(ngModel)]="mainSearchInput" (ngModelChange)="this.mainSearchInputUpdate.next($event)" type="text"
           placeholder="What are you want to find out?">
         <app-settings-button (filtersIsVisible)="toggleFilters($event)"></app-settings-button>
@@ -12,6 +12,6 @@
   </div>
 </header>
 
-<app-filtering-block *ngIf="filtersIsVisible" (searchInput)="showsearchInput($event)"></app-filtering-block>
+<app-filtering-block *ngIf="filtersIsVisible && loginService.isLogIn" (searchInput)="showsearchInput($event)"></app-filtering-block>
 
 <router-outlet></router-outlet>

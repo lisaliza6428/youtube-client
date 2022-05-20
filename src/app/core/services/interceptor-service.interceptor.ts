@@ -14,7 +14,6 @@ export class InterceptorServiceInterceptor implements HttpInterceptor {
 
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    // console.log(request.url);
     let URL = '';
     if (request.url === 'search') {
       URL = '/search?';
@@ -22,12 +21,11 @@ export class InterceptorServiceInterceptor implements HttpInterceptor {
     if (request.url === 'videos') {
       URL = '/videos?';
     }
-    
+
     const clone = request.clone({
       url: API_URL + URL,
       params: request.params.append('key', API_KEY),
     });
     return next.handle(clone);
-
   }
 }
