@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -9,6 +10,13 @@ import { VideoDataService } from './core/services/video-data.service';
 import { InterceptorServiceInterceptor } from './core/services/interceptor-service.interceptor';
 import { LoginService } from './auth/services/login.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { metaReducers, reducers } from './redux/index';
+import { AppEffects } from './redux/effects/app.effects';
 
 
 @NgModule({
@@ -21,6 +29,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictActionImmutability: true,
+        strictStateImmutability: true,
+      },
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     SortService,

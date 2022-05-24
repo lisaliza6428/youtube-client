@@ -1,6 +1,10 @@
+/* eslint-disable ngrx/prefer-action-creator-in-dispatch */
 /* eslint-disable import/named */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { createCustomCardAction } from '../../../redux/actions/app.actions';
 
 @Component({
   selector: 'app-admin-page',
@@ -11,7 +15,11 @@ export class AdminPageComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(public fb: FormBuilder) {}
+  constructor(
+    public fb: FormBuilder,
+    public router: Router,
+    private store: Store,
+  ) {}
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
@@ -33,8 +41,6 @@ export class AdminPageComponent implements OnInit {
       ]],
       date: ['', [
         Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(20),
       ]],
     });
   }
@@ -65,10 +71,10 @@ export class AdminPageComponent implements OnInit {
 
   onSubmit() {
     if (this.formGroup.status === 'VALID'){
-      console.log('submited!');
-    } else {
-      console.log('Error!');
+      const dateString = this.formGroup.controls['date'].value;
+      this._date.setValue(new Date(dateString).getTime());
+      this.store.dispatch(new createCustomCardAction(this.formGroup.value));
+      this.router.navigate(['/main']);
     }
-    console.log(this.formGroup.value); 
   }
 }

@@ -13,6 +13,26 @@
       </div>
     </li>
   </ul>
+
+  <ul class="videos">
+    <li *ngFor="let customCard of customCards | async">
+      <div [appCardBorderStyle]="customCard.date.toLocaleString()" class="video__card">
+        <img class="video__image" [src]="customCard.linkImage" alt="video">
+        <div class="video__stat">
+          <span class="stat__item stat__item--viewed">0</span>
+          <span class="stat__item stat__item--like">0</span>
+          <span class="stat__item stat__item--dislike">0</span>
+          <span class="stat__item stat__item--group">0</span>
+        </div>
+        <h2 class="video__title">{{ customCard.title }}</h2>
+        <a class="video__more-button" [routerLink]="'/main/video/'">more...</a>
+      </div>
+    </li>
+  </ul>
+
+
+
+
  
 
 
