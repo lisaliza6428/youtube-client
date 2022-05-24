@@ -9,7 +9,7 @@ import { AuthenticationComponent } from './components/header/authentication/auth
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
 import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-import { AdminPageComponent } from '../auth/pages/admin-page/admin-page.component';
+import { AdminPageComponent } from '../youtube/pages/admin-page/admin-page.component';
 
 
 @NgModule({

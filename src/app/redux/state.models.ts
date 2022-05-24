@@ -1,4 +1,4 @@
-import { CustomCardModel } from '../auth/models/models';
+import { CustomCardModel } from '../youtube/models/custom-card';
 import { VideoDataModel } from '../youtube/models/response';
 
 export interface AppState {

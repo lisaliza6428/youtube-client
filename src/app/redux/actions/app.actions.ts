@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Action } from '@ngrx/store';
 import { VideoDataModel } from '../../youtube/models/response';
-import { CustomCardModel } from '../../auth/models/models';
+import { CustomCardModel } from '../../youtube/models/custom-card';
 
 export enum actionsType {
   createCustomCard = '[CUSTOM_CARD] createCustomCard',

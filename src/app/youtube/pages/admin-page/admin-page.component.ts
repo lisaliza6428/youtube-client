@@ -77,7 +77,6 @@ export class AdminPageComponent implements OnInit {
       this.formGroup.controls['id'].setValue(Date.now().toString());
       this.store.dispatch(new createCustomCardAction(this.formGroup.value));
       this.router.navigate(['/main']);
-      console.log(this.formGroup.value);
     }
   }
 }

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { VideoDataModel  } from '../../../models/response';
 import { VideoDataService } from '../../../../core/services/video-data.service';
 import { SortService } from '../../../../core/services/sort.service';
-import { CustomCardModel } from '../../../../auth/models/models';
+import { CustomCardModel } from '../../../models/custom-card';
 import { Store } from '@ngrx/store';
 import { selectCustomCards, selectVideos } from '../../../../redux/selectors/app.selectors';
 import { Observable } from 'rxjs';
