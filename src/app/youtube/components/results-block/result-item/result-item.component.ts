@@ -5,7 +5,7 @@ import { VideoDataService } from '../../../../core/services/video-data.service';
 import { SortService } from '../../../../core/services/sort.service';
 import { CustomCardModel } from '../../../../auth/models/models';
 import { Store } from '@ngrx/store';
-import { selectCustomCards } from '../../../../redux/selectors/app.selectors';
+import { selectCustomCards, selectVideos } from '../../../../redux/selectors/app.selectors';
 import { Observable } from 'rxjs';
 
 
@@ -25,7 +25,7 @@ export class ResultItemComponent implements OnInit {
 
   search = '';
 
-  videos: VideoDataModel[] = [];
+  public videos: Observable<VideoDataModel[]> = this.store.select((selectVideos)) || [];
 
   public customCards: Observable<CustomCardModel[]> = this.store.select((selectCustomCards));
 
@@ -38,7 +38,6 @@ export class ResultItemComponent implements OnInit {
     this.sortedViews = sortServ.sViews;
     this.searchInput = sortServ.filterInput;
     this.search = dataService.searchInput;
-    this.videos = dataService.videos;
   }
 
   ngOnInit(){
@@ -46,8 +45,5 @@ export class ResultItemComponent implements OnInit {
     this.sortServ.sortViewsChange.subscribe(value => {this.sortedViews = value;});
     this.sortServ.filterInputChange.subscribe(value => {this.searchInput = value;});
     this.dataService.searchInputChange.subscribe(value => {this.search = value;});
-    this.dataService.dataChange.subscribe(videos => {
-      this.videos = videos;
-    });
   }
 }

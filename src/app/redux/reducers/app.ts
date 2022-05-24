@@ -8,6 +8,7 @@ const initialState: AppState = {
   count: 0,
   updatedAt: Date.now(),
   customCards: [],
+  videos: [],
 };
 
 export const appReducer = (state = initialState, action: AppActions) => {
@@ -39,7 +40,16 @@ export const appReducer = (state = initialState, action: AppActions) => {
           ...state.customCards, action.payload,
         ],
       };
+    case actionsType.getVideos:
+      console.log(state);
+      console.log(action.payload);
+      return {
+        ...state,
+        videos: action.payload,
+      };
+
     default:
+      console.log(state);
       return state;
   }
 };

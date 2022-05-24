@@ -7,7 +7,8 @@ import { VideoDataModel  } from '../models/response';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(data: VideoDataModel[], input: string): VideoDataModel[] {
+  transform(data: any, input: string): VideoDataModel[] {
+    if (!input || !data) return data;
     return  [...data].filter(x => x.snippet.title.toLowerCase().includes(input));
   }
 }

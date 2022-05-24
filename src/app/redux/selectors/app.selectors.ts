@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { VideoDataModel } from '../../youtube/models/response';
 import { CustomCardModel } from '../../auth/models/models';
 import { appNode } from '../reducers/app';
 import { AppState } from '../state.models';
@@ -19,4 +20,9 @@ export const selectUpdatedAt = createSelector(
 export const selectCustomCards = createSelector(
   selectCountFeature,
   (state: AppState): CustomCardModel[] => state.customCards,
+);
+
+export const selectVideos = createSelector(
+  selectCountFeature,
+  (state: AppState): VideoDataModel[] => state.videos,
 );

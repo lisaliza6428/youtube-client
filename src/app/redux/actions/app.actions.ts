@@ -2,6 +2,7 @@
 /* eslint-disable import/named */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Action } from '@ngrx/store';
+import { VideoDataModel } from '../../youtube/models/response';
 import { CustomCardModel } from '../../auth/models/models';
 
 export enum actionsType {
@@ -10,6 +11,7 @@ export enum actionsType {
   clear = '[COUNT] clear',
   updatedAt = '[COUNT] updated at',
   createCustomCard = '[CUSTOM_CARD] createCustomCard',
+  getVideos = '[VIDEOS] getVideos',
 }
 
 export class CountIncreaseAction implements Action {
@@ -40,8 +42,16 @@ export class createCustomCardAction implements Action {
   }
 }
 
+export class getVideosAction implements Action {
+  readonly type = actionsType.getVideos;
+
+  constructor(public payload: VideoDataModel[]) {
+  }
+}
+
 export type AppActions = CountIncreaseAction
 | CountDecreaseAction
 | CountClearAction
 | CountUpdatedAtAction
-| createCustomCardAction;
+| createCustomCardAction
+| getVideosAction;

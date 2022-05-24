@@ -1,28 +1,29 @@
+/* eslint-disable ngrx/prefer-action-creator-in-dispatch */
 import { Injectable } from '@angular/core';
-import { VideoDataModel, ResponceModel } from '../../youtube/models/response';
+import { ResponceModel } from '../../youtube/models/response';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { getVideosAction } from '../../redux/actions/app.actions';
+
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class VideoDataService {
 
-  videos: VideoDataModel[] = [];
-
   searchInput = '';
 
   searchInputChange: Subject<string> = new Subject<string>();
 
-  dataChange: Subject<VideoDataModel[]> = new Subject<VideoDataModel[]>();
-
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private store: Store,
+  ) {
     this.searchInputChange.subscribe((value) => {
       this.searchInput = value;
-    });
-    this.dataChange.subscribe((value) => {
-      this.videos = value;
     });
   }
 
@@ -37,8 +38,7 @@ export class VideoDataService {
       data.map(x => array.push(x.id.videoId));
       const arrayIDs: string = array.join();
       this.getVideoDataById(arrayIDs).pipe(map((res: ResponceModel) => res.items)).subscribe(videos => {
-        this.videos = videos; 
-        this.dataChange.next(this.videos);
+        this.store.dispatch(new getVideosAction(videos));
       });
     });
   }

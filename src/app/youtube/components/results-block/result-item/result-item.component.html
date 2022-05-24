@@ -1,5 +1,5 @@
   <ul class="videos">
-    <li *ngFor="let video of videos | filter: searchInput | sortDates: sortedDates | sortViews: sortedViews">
+    <li *ngFor="let video of videos | async | filter: searchInput | sortDates: sortedDates | sortViews: sortedViews">
       <div [appCardBorderStyle]="video.snippet.publishedAt" class="video__card">
         <img class="video__image" [src]="video.snippet.thumbnails.medium.url" alt="video">
         <div class="video__stat">
@@ -31,10 +31,6 @@
   </ul>
 
 
-
-
- 
-
-
-
-
+<!-- 
+  <li *ngFor="let video of videos! | async | filter: searchInput | sortDates: sortedDates | sortViews: sortedViews">
+ -->
