@@ -1,8 +1,7 @@
+import { CustomCardModel } from '../auth/models/models';
 import { VideoDataModel } from '../youtube/models/response';
 
 export interface AppState {
-  count: number;
-  updatedAt: number;
-  customCards: any[],
+  customCards: CustomCardModel[],
   videos: VideoDataModel[],
 }

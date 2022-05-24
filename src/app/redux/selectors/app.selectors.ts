@@ -5,24 +5,14 @@ import { appNode } from '../reducers/app';
 import { AppState } from '../state.models';
 
 
-export const selectCountFeature = createFeatureSelector<AppState>(appNode);
-
-export const selectCount = createSelector(
-  selectCountFeature,
-  (state: AppState): number => state.count,
-);
-
-export const selectUpdatedAt = createSelector(
-  selectCountFeature,
-  (state: AppState): number => state.updatedAt,
-);
+export const selectAppFeature = createFeatureSelector<AppState>(appNode);
 
 export const selectCustomCards = createSelector(
-  selectCountFeature,
+  selectAppFeature,
   (state: AppState): CustomCardModel[] => state.customCards,
 );
 
 export const selectVideos = createSelector(
-  selectCountFeature,
+  selectAppFeature,
   (state: AppState): VideoDataModel[] => state.videos,
 );
