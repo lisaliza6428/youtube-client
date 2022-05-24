@@ -42,6 +42,7 @@ export class AdminPageComponent implements OnInit {
       date: ['', [
         Validators.required,
       ]],
+      id: [''],
     });
   }
 
@@ -72,9 +73,11 @@ export class AdminPageComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.status === 'VALID'){
       const dateString = this.formGroup.controls['date'].value;
-      this._date.setValue(new Date(dateString).getTime());
+      this._date.setValue(new Date(dateString).toISOString());
+      this.formGroup.controls['id'].setValue(Date.now().toString());
       this.store.dispatch(new createCustomCardAction(this.formGroup.value));
       this.router.navigate(['/main']);
+      console.log(this.formGroup.value);
     }
   }
 }

@@ -4,4 +4,5 @@ export interface CustomCardModel {
   linkImage: string,
   linkVideo: string,
   date: number,
+  id: string,
 }
