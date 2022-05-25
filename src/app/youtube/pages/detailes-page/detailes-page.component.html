@@ -2,7 +2,7 @@
   <div class="wrapper">
     <button class="button-back" (click)="historyBack()"><img src="../../../../assets/arrow.svg" alt="back"></button>
     <img class="video-image" [src]="video.snippet.thumbnails.high.url" alt="">
-    <div class="video-detailes" [ngStyle]="{'min-height': video.snippet.thumbnails.high.height + 'px'}" [appCardBorderStyle]="video.snippet.publishedAt">
+    <div class="video-detailes style" [ngStyle]="{'min-height': video.snippet.thumbnails.high.height + 'px'}" [appCardBorderStyle]="video.snippet.publishedAt">
       <div class="video-info">
         <div class="video__title">{{ video.snippet.title }}</div>
         <div class="video__date">{{ video.snippet.publishedAt | date:"fullDate" }}</div>

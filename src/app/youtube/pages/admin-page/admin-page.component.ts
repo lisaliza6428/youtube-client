@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { createCustomCardAction } from '../../../redux/actions/app.actions';
+import { VideoDataModel } from '../../models/response';
 
 @Component({
   selector: 'app-admin-page',
@@ -75,8 +76,35 @@ export class AdminPageComponent implements OnInit {
       const dateString = this.formGroup.controls['date'].value;
       this._date.setValue(new Date(dateString).toISOString());
       this.formGroup.controls['id'].setValue(Date.now().toString());
-      this.store.dispatch(new createCustomCardAction(this.formGroup.value));
+      const card = getNewCard(this.formGroup.value);
+      this.store.dispatch(new createCustomCardAction(card));
       this.router.navigate(['/main']);
     }
   }
+}
+
+
+function getNewCard(data: any){
+  return {
+    id: new Date(data.date).getTime().toString(),
+    snippet: {
+      title: `${data.title}`,
+      publishedAt: data.date,
+      description: `${data.description}`,
+      thumbnails: {
+        high: {
+          url: data.linkImage,
+          width: 480,
+          height: 360,
+        },
+      },
+    },
+    statistics: {
+      viewCount: '0',
+      likeCount: '0',
+      dislikeCount: '0',
+      commentCount: '0',
+      favoriteCount: '0',
+    },
+  };
 }

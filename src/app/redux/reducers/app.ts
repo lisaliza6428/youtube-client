@@ -7,6 +7,7 @@ export const appNode = 'count';
 const initialState: AppState = {
   customCards: [],
   videos: [],
+  currentVideo: {},
 };
 
 export const appReducer = (state = initialState, action: AppActions) => {
@@ -19,11 +20,19 @@ export const appReducer = (state = initialState, action: AppActions) => {
           ...state.customCards, action.payload,
         ],
       };
-
     case actionsType.getVideos:
+
       return {
         ...state,
         videos: action.payload,
+      };
+
+
+    case actionsType.getVideoById:
+
+      return {
+        ...state,
+        currentVideo: [...state.videos, ...state.customCards ].filter((x) => x.id === action.payload)[0],
       };
 
     default:

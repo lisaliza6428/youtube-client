@@ -24,6 +24,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: DetailesPageComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'main/my-video/:id',
+    pathMatch: 'full',
+    component: DetailesPageComponent,
+    canActivate: [AuthGuard],
   }, 
   {
     path: 'auth',

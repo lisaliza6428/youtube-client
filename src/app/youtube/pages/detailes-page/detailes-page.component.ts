@@ -3,6 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { VideoDataModel, ResponceModel } from '../../models/response';
 import { VideoDataService } from '../../../core/services/video-data.service';
+import { Store } from '@ngrx/store';
+import { getVideoByIdAction } from '../../../redux/actions/app.actions';
+import { Observable } from 'rxjs';
+import { selectCurrentVideo } from '../../../redux/selectors/app.selectors';
+
+
 
 @Component({
   selector: 'app-detailes-page',
@@ -13,15 +19,25 @@ export class DetailesPageComponent implements OnInit {
 
   currentID: '';
 
-  video: VideoDataModel;
+  video: any;
 
-  constructor(private route: ActivatedRoute, private dataService: VideoDataService) {
+
+  constructor(
+    private route: ActivatedRoute,
+    private dataService: VideoDataService,
+    private store: Store,
+  ) {
   }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.currentID = params['id'];
-      this.getVideo(this.currentID);
+      this.store.dispatch(new getVideoByIdAction(this.currentID));
+      this.store.select((selectCurrentVideo)).subscribe(x =>{
+        this.video = x;
+        console.log(x);
+        
+      });
     });
   }
 
@@ -29,12 +45,5 @@ export class DetailesPageComponent implements OnInit {
     history.back();
   }
 
-  getVideo(id: string) {
-    this.dataService.getVideoDataById(id)
-      .subscribe((video: ResponceModel) => {
-        this.video = video.items[0];
-        // console.log(video.items[0]);
-      });
-  }
 }
 

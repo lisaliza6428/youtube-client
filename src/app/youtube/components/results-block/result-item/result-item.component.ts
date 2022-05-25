@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { VideoDataModel  } from '../../../models/response';
 import { VideoDataService } from '../../../../core/services/video-data.service';
 import { SortService } from '../../../../core/services/sort.service';
-import { CustomCardModel } from '../../../models/custom-card';
 import { Store } from '@ngrx/store';
-import { selectCustomCards, selectVideos } from '../../../../redux/selectors/app.selectors';
+import { selectIntegrated } from '../../../../redux/selectors/app.selectors';
 import { Observable } from 'rxjs';
 
 
@@ -25,9 +24,7 @@ export class ResultItemComponent implements OnInit {
 
   search = '';
 
-  public videos: Observable<VideoDataModel[]> = this.store.select((selectVideos)) || [];
-
-  public customCards: Observable<CustomCardModel[]> = this.store.select((selectCustomCards));
+  public videos: Observable<VideoDataModel[]> = this.store.select((selectIntegrated));
 
   constructor(
     public dataService: VideoDataService,

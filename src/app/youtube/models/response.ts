@@ -5,8 +5,8 @@ export interface ResponceModel {
   items: VideoDataModel[] 
 }
 export interface VideoDataModel {
-  kind: string,
-  etag: string,
+  kind?: string,
+  etag?: string,
   id: {
     kind: string,
     videoId: string,
