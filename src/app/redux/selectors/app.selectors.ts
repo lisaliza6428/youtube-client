@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { VideoDataModel } from '../../youtube/models/response';
-import { CustomCardModel } from '../../youtube/models/custom-card';
+//import { CustomCardModel } from '../../youtube/models/custom-card';
 import { appNode } from '../reducers/app';
 import { AppState } from '../state.models';
 

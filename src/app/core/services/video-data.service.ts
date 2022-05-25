@@ -1,13 +1,10 @@
-/* eslint-disable ngrx/prefer-action-creator-in-dispatch */
 import { Injectable } from '@angular/core';
 import { ResponceModel } from '../../youtube/models/response';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import { getVideosAction } from '../../redux/actions/app.actions';
-
-
+import { getVideos } from '../../redux/actions/app.actions';
 
 @Injectable({
   providedIn: 'root',
@@ -38,7 +35,7 @@ export class VideoDataService {
       data.map(x => array.push(x.id.videoId));
       const arrayIDs: string = array.join();
       this.getVideoDataById(arrayIDs).pipe(map((res: ResponceModel) => res.items)).subscribe(videos => {
-        this.store.dispatch(new getVideosAction(videos));
+        this.store.dispatch(getVideos({ payload: videos }));
       });
     });
   }

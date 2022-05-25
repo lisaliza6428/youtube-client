@@ -1,36 +1,25 @@
-/* eslint-disable import/named */
-/* eslint-disable ngrx/prefer-action-creator */
-/* eslint-disable @typescript-eslint/naming-convention */
-import { Action } from '@ngrx/store';
+
+import { createAction, props } from '@ngrx/store';
 import { VideoDataModel } from '../../youtube/models/response';
 //import { CustomCardModel } from '../../youtube/models/custom-card';
 
-export enum actionsType {
+export enum ActionsType {
   createCustomCard = '[CUSTOM_CARD] createCustomCard',
   getVideos = '[VIDEOS] getVideos',
   getVideoById = '[VIDEOS] getVideoById',
 }
 
-export class createCustomCardAction implements Action {
-  readonly type = actionsType.createCustomCard;
+export const createCustomCard = createAction(
+  ActionsType.createCustomCard,
+  props<{ payload: any }>(),
+);
 
-  constructor(public payload: any) {
-  }
-}
+export const getVideos = createAction(
+  ActionsType.getVideos,
+  props<{ payload: VideoDataModel[] }>(),
+);
 
-export class getVideosAction implements Action {
-  readonly type = actionsType.getVideos;
-
-  constructor(public payload: VideoDataModel[]) {
-  }
-}
-
-export class getVideoByIdAction implements Action {
-  readonly type = actionsType.getVideoById;
-
-  constructor(public payload: any) {
-  }
-}
-
-export type AppActions = createCustomCardAction
-| getVideosAction | getVideoByIdAction;
+export const getVideoById = createAction(
+  ActionsType.getVideoById,
+  props<{ payload: string }>(),
+);

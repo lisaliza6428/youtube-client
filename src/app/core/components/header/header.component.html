@@ -2,6 +2,7 @@
   <div class="container">
     <div class="header">
       <div class="header__left">
+        <p class="header__link" routerLink="/main">Main page</p>
         <app-logo routerLink="/main" ></app-logo>
         <input class="search-input" [(ngModel)]="mainSearchInput" (ngModelChange)="this.mainSearchInputUpdate.next($event)" type="text"
           placeholder="What are you want to find out?">

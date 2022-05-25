@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/default-param-last */
-import { AppActions, actionsType } from '../actions/app.actions';
+import { ActionsType } from '../actions/app.actions';
 import { AppState } from '../state.models';
 
 export const appNode = 'count';
@@ -10,17 +10,17 @@ const initialState: AppState = {
   currentVideo: {},
 };
 
-export const appReducer = (state = initialState, action: AppActions) => {
+export const appReducer = (state = initialState, action: any) => {
   switch (action.type) {
     
-    case actionsType.createCustomCard:
+    case ActionsType.createCustomCard:
       return {
         ...state,
         customCards: [
           ...state.customCards, action.payload,
         ],
       };
-    case actionsType.getVideos:
+    case ActionsType.getVideos:
 
       return {
         ...state,
@@ -28,7 +28,7 @@ export const appReducer = (state = initialState, action: AppActions) => {
       };
 
 
-    case actionsType.getVideoById:
+    case ActionsType.getVideoById:
 
       return {
         ...state,

@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input, Renderer2, OnInit   } from '@angular/core
   selector: '[appCardBorderStyle]',
 })
 export class CardBorderStyleDirective implements OnInit {
-  @Input('appCardBorderStyle') publishedString: string;
+  @Input('appCardBorderStyle') publishedString: any;
 
   constructor(private elementRef: ElementRef, private render: Renderer2) {
   }
