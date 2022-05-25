@@ -1,0 +1,30 @@
+.error-page {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+
+  .error-page__img {
+    font-size: 0;
+    width: 80px;
+  }
+
+  .error-page__title {
+    width: 120px;
+    font-size: 24px;
+  }
+}
+a {
+  text-decoration: none;
+}
+.error-page__main-link {
+  display: flex;
+  justify-content: center;
+
+  .error-page__link {
+    &:hover {
+      color: blue;
+    }
+  }
+}
