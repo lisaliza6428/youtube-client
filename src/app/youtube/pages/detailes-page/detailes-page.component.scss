@@ -1,0 +1,101 @@
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  .button-back {
+    display: inline-block;
+    border: none;
+    background-color: #2f80ed;
+    border-radius: 5px 0 0 5px;
+    img {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+    }
+  }
+  .video-detailes {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+  }
+}
+.video-info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.video__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+.video__date {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #828282;
+}
+
+.video__descr-title {
+  margin-top: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+.video__descr {
+  margin-top: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #828282;
+  text-align: justify;
+  height: 120px;
+  overflow: hidden;
+}
+
+.video__stat {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 21px;
+  .stat__item {
+    position: relative;
+    padding-left: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 12px;
+    &::before {
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &.stat__item--viewed::before {
+      background-image: url("../../../../assets/viewed.svg");
+    }
+    &.stat__item--like::before {
+      background-image: url("../../../../assets/liked.svg");
+    }
+    &.stat__item--dislike::before {
+      background-image: url("../../../../assets/dislike.svg");
+    }
+    &.stat__item--group::before {
+      background-image: url("../../../../assets/group.svg");
+    }
+  }
+}

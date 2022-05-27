@@ -1,0 +1,55 @@
+<div class="container">
+  <form class="admin-form" [formGroup]="formGroup" novalidate  (submit)="onSubmit()">
+    
+    <h2 class="admin-form__title">Create new card</h2>
+
+    <h3 class="admin-form__field-title">Title:</h3>
+    <input class="admin-form__field-input" formControlName="title" type="text">
+    
+    <div class="message-container">
+      <div *ngIf="_title.invalid && (_title.touched || _title.dirty || _title.untouched)">
+        <span class="message" *ngIf="_title.errors?.['required']">Please enter a title</span>
+        <span class="message" *ngIf="_title.errors?.['minlength']">The title is too short</span>
+        <span class="message" *ngIf="_title.errors?.['maxlength']">The title is too long</span>
+      </div>
+    </div>
+
+    <h3 class="admin-form__field-title">Description:</h3>
+    <textarea placeholder="optional" class="admin-form__field-input" formControlName="description" name="" id="" cols="30" rows="15"></textarea>
+    <div class="message-container">
+      <div *ngIf="_description.invalid && (_description.touched || _description.dirty)">
+        <span class="message" *ngIf="_description.errors?.['maxlength']">The title is too long</span>
+      </div>
+    </div>
+
+    <h3 class="admin-form__field-title" >Img:</h3>
+    <input class="admin-form__field-input" formControlName="linkImage" type="text">
+    <div class="message-container">
+      <div *ngIf="_linkImage.invalid && (_linkImage.touched || _linkImage.dirty || _linkImage.untouched)">
+        <span class="message" *ngIf="_linkImage.errors?.['required']">Please enter a link to the image</span>
+        <span class="message" *ngIf="_linkImage.errors?.['pattern']">The image link is invalid</span>
+      </div>
+    </div>
+
+    <h3 class="admin-form__field-title">Link video:</h3>
+    <input class="admin-form__field-input" formControlName="linkVideo" type="text">
+    <div class="message-container">
+      <div *ngIf="_linkVideo.invalid && (_linkVideo.touched || _linkVideo.dirty || _linkVideo.untouched)">
+        <span class="message" *ngIf="_linkVideo.errors?.['required']">Please enter a link to the video</span>
+        <span class="message" *ngIf="_linkVideo.errors?.['pattern']">The video link is invalid</span>
+      </div>
+    </div>
+
+    <h3 class="admin-form__field-title">Creation date:</h3>
+    <input class="admin-form__field-input" formControlName="date" type="date" [max]="getToday()">
+    <div class="message-container">
+      <div *ngIf="_date.invalid && (_date.touched || _date.dirty || _date.untouched)">
+        <span class="message" *ngIf="_date.errors?.['required']">Please enter a creation date</span>
+      </div>
+    </div>
+
+    <div class="buttons-wrapper">
+      <button class="admin-form__submit" type="submit" [disabled]="formGroup.invalid">Create card </button>
+    </div>
+  </form>
+</div>

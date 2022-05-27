@@ -1,0 +1,24 @@
+<div *ngIf="video" class="container">
+  <div class="wrapper">
+    <button class="button-back" (click)="historyBack()"><img src="../../../../assets/arrow.svg" alt="back"></button>
+    <img class="video-image" [src]="video.snippet.thumbnails.high.url" alt="">
+    <div class="video-detailes" [ngStyle]="{'min-height': video.snippet.thumbnails.high.height + 'px'}" [appCardBorderStyle]="video.snippet.publishedAt">
+      <div class="video-info">
+        <div class="video__title">{{ video.snippet.title }}</div>
+        <div class="video__date">{{ video.snippet.publishedAt | date:"fullDate" }}</div>
+      </div>
+      <h3 class="video__descr-title">Description:</h3>
+      <p class="video__descr">{{ video.snippet.description }}</p>
+      <div class="video__stat">
+        <span *ngIf="video.statistics.viewCount" class="stat__item stat__item--viewed">{{ video.statistics.viewCount
+          }}</span>
+        <span *ngIf="video.statistics.likeCount" class="stat__item stat__item--like">{{ video.statistics.likeCount
+          }}</span>
+        <span *ngIf="video.statistics.favoriteCount" class="stat__item stat__item--dislike">{{
+          video.statistics.favoriteCount }}</span>
+        <span video.statistics.commentCount class="stat__item stat__item--group">{{ video.statistics.commentCount
+          }}</span>
+      </div>
+    </div>
+  </div>
+</div>
