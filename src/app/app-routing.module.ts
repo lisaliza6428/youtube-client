@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
-import { DetailesPageComponent } from './youtube/pages/detailes-page/detailes-page.component';
+import { DetailsPageComponent } from './youtube/pages/details-page/details-page.component';
 import { AdminPageComponent } from './youtube/pages/admin-page/admin-page.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
@@ -22,13 +22,13 @@ const routes: Routes = [
   {
     path: 'main/video/:id',
     pathMatch: 'full',
-    component: DetailesPageComponent,
+    component: DetailsPageComponent,
     canActivate: [AuthGuard],
   },
   {
     path: 'main/my-video/:id',
     pathMatch: 'full',
-    component: DetailesPageComponent,
+    component: DetailsPageComponent,
     canActivate: [AuthGuard],
   }, 
   {

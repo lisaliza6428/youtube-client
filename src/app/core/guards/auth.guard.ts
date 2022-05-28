@@ -21,9 +21,9 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   checkAuthorization() {
-    const isAuthorised = this.logService.isLogIn;
+    const isAuthorized = this.logService.isLogIn;
 
-    if (isAuthorised){
+    if (isAuthorized){
       return true;
     } else {
       this.router.navigate(['auth']);

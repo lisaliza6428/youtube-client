@@ -13,6 +13,6 @@
   </div>
 </header>
 
-<app-filtering-block *ngIf="filtersIsVisible && loginService.isLogIn" (searchInput)="showsearchInput($event)"></app-filtering-block>
+<app-filtering-block *ngIf="filtersIsVisible && loginService.isLogIn" (searchInput)="showSearchInput($event)"></app-filtering-block>
 
 <router-outlet></router-outlet>

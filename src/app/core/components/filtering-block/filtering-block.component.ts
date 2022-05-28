@@ -8,14 +8,14 @@ import { SortService } from '../../services/sort.service';
 })
 export class FilteringBlockComponent  {
 
-  constructor(public sortServ: SortService) { }
+  constructor(public sortService: SortService) { }
 
   toggleSortDates() {
-    this.sortServ.toggleSortDates();
+    this.sortService.toggleSortDates();
   }
 
   toggleSortViews() {
-    this.sortServ.toggleSortViews();
+    this.sortService.toggleSortViews();
   }
 
 
@@ -23,7 +23,7 @@ export class FilteringBlockComponent  {
 
   filter(e: KeyboardEvent){
     const value = (e.target as HTMLInputElement).value.toLowerCase();
-    this.sortServ.checkFilterInput(value);
+    this.sortService.checkFilterInput(value);
   }
 
 }

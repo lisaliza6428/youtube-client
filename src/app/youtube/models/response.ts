@@ -1,4 +1,4 @@
-export interface ResponceModel {
+export interface ResponseModel {
   kind: string,
   etag: string,
   pageInfo: PageInfoModel,

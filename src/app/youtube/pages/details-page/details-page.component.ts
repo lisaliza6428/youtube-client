@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
 import { selectCurrentVideo } from '../../../redux/selectors/app.selectors';
 
 @Component({
-  selector: 'app-detailes-page',
-  templateUrl: './detailes-page.component.html',
-  styleUrls: ['./detailes-page.component.scss'],
+  selector: 'app-details-page',
+  templateUrl: './details-page.component.html',
+  styleUrls: ['./details-page.component.scss'],
 })
-export class DetailesPageComponent implements OnInit {
+export class DetailsPageComponent implements OnInit {
 
   currentID: '';
 

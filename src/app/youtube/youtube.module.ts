@@ -6,7 +6,7 @@ import { CardBorderStyleDirective } from './directives/card-border-style.directi
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortDatesPipe } from './pipes/sort-dates.pipe';
 import { SortViewsPipe } from './pipes/sort-views.pipe';
-import { DetailesPageComponent } from './pages/detailes-page/detailes-page.component';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { YoutubeRoutingModule } from './youtube-routing.module';
     FilterPipe,
     SortDatesPipe,
     SortViewsPipe,
-    DetailesPageComponent,
+    DetailsPageComponent,
   ],
   imports: [
     CommonModule,

@@ -17,16 +17,16 @@ export class HeaderComponent  {
   public mainSearchInput: string;
 
   constructor(
-    public sortServ: SortService,
-    public dataServ: VideoDataService,
+    public sortService: SortService,
+    public dataService: VideoDataService,
     public loginService: LoginService) { 
     this.mainSearchInputUpdate.pipe(
       debounceTime(400),
       distinctUntilChanged())
       .subscribe(value => {
         if (value.length >= 3){
-          this.dataServ.searchInputChange.next(value);
-          this.dataServ.getVideoData(value);
+          this.dataService.searchInputChange.next(value);
+          this.dataService.getVideoData(value);
         }
       });
   }
@@ -51,7 +51,7 @@ export class HeaderComponent  {
 
   searchInput = '';
 
-  showsearchInput(searchInput: string) {
+  showSearchInput(searchInput: string) {
     this.searchInput = searchInput;
   }
 

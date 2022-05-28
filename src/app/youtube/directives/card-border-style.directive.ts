@@ -13,8 +13,8 @@ export class CardBorderStyleDirective implements OnInit {
   ngOnInit() {
     const currentDate = new Date();
     const publishedDate = new Date(this.publishedString);
-    const timeDiffrence = Math.abs(currentDate.getTime() - publishedDate.getTime());
-    const days = Math.ceil(timeDiffrence / (1000 * 3600 * 24));
+    const timeDifference = Math.abs(currentDate.getTime() - publishedDate.getTime());
+    const days = Math.ceil(timeDifference / (1000 * 3600 * 24));
     let color = '';
     if (days <= 7) {
       color = 'green';
