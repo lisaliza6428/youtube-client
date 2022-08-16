@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="login-form" [formGroup]="formGroup" (submit)="onSubmit()">
+    <h2 class="login-form__password">Login</h2>
+    <h3 class="login-form__field-title">login</h3>
+    <input class="login-form__field-input" formControlName="login" name="login" id="login" type="text">
+
+    <div class="message-container">
+      <div *ngIf="_login.invalid && (_login.touched || _login.dirty || _login.untouched)">
+        <span class="message" *ngIf="_login.errors?.['required']">Please enter login email</span>
+        <span class="message" *ngIf="_login.errors?.['email']">The login email is invalid</span>
+      </div>
+    </div>
+
+    <h3 class="login-form__field-title">password</h3>
+    <input class="login-form__field-input" formControlName="password" type="text">
+
+      <div class="message-container">
+        <div *ngIf="_password.invalid && (_password.touched || _password.dirty || _password.untouched)">
+          <span class="message" *ngIf="_password.errors?.['required']">Please enter a password</span>
+          <span class="message" *ngIf="_password.errors?.['validateUpperCase'] && _password.dirty">At least one uppercase letter</span>
+          <span class="message" *ngIf="_password.errors?.['validateLowerCase'] && _password.dirty">
+            At least one lowercase letter</span>
+          <span class="message" *ngIf="_password.errors?.['validateNumbers'] && _password.dirty">
+            At least one number</span>
+          <span class="message" *ngIf="_password.errors?.['validateSpecial'] && _password.dirty">
+            At least one special character (#?!@$%^&*-)</span>
+          <span class="message" *ngIf="_password.errors?.['minlength']">"At least 8 characters"</span>
+        </div>
+      </div>
+
+    <div class="buttons-wrapper">
+      <button class="login-form__submit"  type="submit" [disabled]="formGroup.invalid">Login</button>
+    </div>
+  </form>
+</div>

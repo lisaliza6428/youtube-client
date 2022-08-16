@@ -1,0 +1,11 @@
+<div class="filtering-block">
+  <div class="container">
+    <div class="filtering__list">
+      <span class="list__title">Sorting by:</span>
+      <button class="list__item" (click)="toggleSortDates()">date</button>
+      <button class="list__item" (click)="toggleSortViews()">count of views</button>
+      <button class="list__item">by word or sentence:</button>
+      <input class="list__input" (keyup)="filter($event)" type="text">
+    </div>
+  </div>
+</div>
